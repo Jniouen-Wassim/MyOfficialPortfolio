@@ -3,9 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Wassim Jniouen</title>
+    <title>Portfolio Créatif</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <button id="languageToggle" class="language-toggle">EN</button>
     
+    <nav class="side-nav">
+        <a href="#section1" class="nav-item active" data-section="1">
+            <i class="fas fa-rocket"></i>
+        </a>
+        <a href="#section2" class="nav-item" data-section="2">
+            <i class="fas fa-user-astronaut"></i>
+        </a>
+        <a href="#section3" class="nav-item" data-section="3">
+            <i class="fas fa-file-alt"></i>
+        </a>
+        <a href="#section4" class="nav-item" data-section="4">
+            <i class="fas fa-satellite"></i>
+        </a>
+    </nav>
+
+    <main>
+        <section id="section1" class="section">
+            <h1 class="typing-text" data-fr="Développeur Créatif" data-en="Creative Developer">
+                Développeur Créatif
+            </h1>
+            <div class="social-links">
+                <a href="mailto:jniouenwassim@hotmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/wassim-jniouen-953b651b9/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/Jniouen-Wassim" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </section>
+
+        <section id="section2" class="section">
+            <div class="content">
+                <h2 data-fr="À Propos" data-en="About">
+                    À Propos
+                </h2>
+                <p class="description" data-fr="Développeur passionné par la création d'expériences web innovantes et immersives. Spécialisé dans le développement front-end avec une touche créative unique." 
+                   data-en="Passionate developer creating innovative and immersive web experiences. Specialized in front-end development with a unique creative touch.">
+                   Développeur passionné par la création d'expériences web innovantes et immersives. Spécialisé dans le développement front-end avec une touche créative unique.
+                </p>
+                <div class="skills">
+                    <div class="skill">
+                        <i class="fab fa-figma"></i>
+                        <span>Figma</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-react"></i>
+                        <span>Next.js</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-pen-nib"></i>
+                        <span>Illustrator</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-image"></i>
+                        <span>Photoshop</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-bootstrap"></i>
+                        <span>Bootstrap</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-wordpress"></i>
+                        <span>WordPress</span>
+                    </div>
+                </div>
+        </section>
+
+        <section id="section3" class="section">
+            <div class="content">
+                <h2 data-fr="CV" data-en="Resume">CV</h2>
+                <p class="description" data-fr="Plus de 5 ans d'expérience en développement web créatif" 
+                   data-en="Over 5 years of experience in creative web development">
+                    Plus de 5 ans d'expérience en développement web créatif                
+                </p>
+                <a href="votre-cv.pdf" download class="download-cv" data-fr="Télécharger CV" data-en="Download Resume">
+                    Télécharger CV
+                </a>
+            </div>
+        </section>
+
+        <section id="section4" class="section">
+            <div class="content">
+                <h2 data-fr="Projets" data-en="Projects" class="section-title">Projets</h2>
+                <div class="projects-grid">
+                    <a href="#" class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Project 1">
+                            <div class="project-overlay">
+                                <i data-lucide="external-link"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 data-fr="Portfolio Créatif" data-en="Creative Portfolio">
+                                Project 1
+                            </h3>
+                            <p data-fr="Design et développement d'un portfolio moderne avec animations et effets visuels." 
+                               data-en="Design and development of a modern portfolio with animations and visual effects.">
+                               Description of project 1
+                            </p>
+                        </div>
+                    </a>
+                    <a href="#" class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Project 1">
+                            <div class="project-overlay">
+                                <i data-lucide="external-link"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 data-fr="Portfolio Créatif" data-en="Creative Portfolio">
+                               ?
+                            </h3>
+                            <p data-fr="?" 
+                               data-en="?">
+                               ?
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
