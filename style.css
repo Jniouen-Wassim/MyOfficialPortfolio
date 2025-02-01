@@ -2,35 +2,15 @@
 /*============================================(  @IMPORT )======================================================================*/
 
 
-.container-customSvgWave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
 
-.container-customSvgWave svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 81px;
-    transform: rotateY(180deg);
-}
 
-.container-customSvgWave .shape-fill {
-    fill: var(--white);
-}
-
-/** For mobile devices **/
 
 /*------------------▼----------------▼----------------------*/
 /*------------------▼ variables / global ▼----------------------*/
 :root {
     --primary: #53388C;
     --secondary: #F4D3A1;
+    --tertiary: #FF62C0;
     --white: #F8F8F8;
     --dark: #1a1a1a;
     --space-gradient: linear-gradient(135deg, rgba(83, 56, 140, 0.05), rgba(244, 211, 161, 0.05));
@@ -79,7 +59,7 @@ body {
 
 .language-toggle:hover {
     background: var(--secondary);
-    color: var(--dark);
+    color: var(--primary);
     transform: translateY(-2px);
 }
 
@@ -107,7 +87,7 @@ body {
     transition: 0.3s ease;
     border-radius: 50%;
     font-size: 1.2rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
 }
 
@@ -120,7 +100,7 @@ body {
 .nav-item:hover {
     transform: translateY(-3px);
     background: var(--secondary);
-    color: var(--dark);
+    color: var(--primary);
 }
 
 /*------------------▼ Toute les "section" ▼----------------------*/
@@ -247,6 +227,29 @@ body {
     transform: translateY(-5px);
     background: var(--primary);
 }
+
+.container-customSvgWave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.container-customSvgWave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 81px;
+    transform: rotateY(180deg);
+}
+
+.container-customSvgWave .shape-fill {
+    fill: var(--white);
+}
+
 /*------------------▼ section 2 (À propos de moi) ▼----------------------*/
 
 /* #section2 {} */
@@ -257,6 +260,7 @@ body {
     color: var(--dark);
     max-width: 800px;
     margin: 2rem auto;
+    padding: 0 40px;
 }
 
 .skills {
@@ -287,7 +291,7 @@ body {
     transform: translateY(-5px);
 }
 
-.skill i {
+.skill i, .skill img{
     font-size: 2rem;
     color: var(--primary);
     animation: float 3s ease-in-out infinite;
@@ -383,7 +387,8 @@ body {
 
 .project-overlay i {
     color: white;
-    opacity: 0.5;
+    font-size: 3rem;
+    opacity: 0;
     transition: all 0.3s ease;
     transform: translateY(20px);
 }
@@ -445,6 +450,15 @@ body {
         width: 40px;
         height: 40px;
         font-size: 1rem;
+    }
+
+    .description {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: var(--dark);
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 15px;
     }
 
     .typing-text {

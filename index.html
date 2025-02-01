@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- S0 - Language Toggle -->
     <button id="languageToggle" class="language-toggle">EN</button>
     
+    <!-- S1 - Side Navigation -->
     <nav class="side-nav">
         <a href="#section1" class="nav-item active" data-section="1">
             <i class="fas fa-rocket"></i>
@@ -26,6 +28,7 @@
     </nav>
 
     <main>
+        <!-- S2 - Acceuil -->
         <section id="section1" class="section">
             <h1 class="typing-text" data-fr="Développeur Créatif" data-en="Creative Developer">
                 Développeur Créatif
@@ -44,6 +47,7 @@
             </svg>
         </div>
 
+        <!-- S3 - About -->
         <section id="section2" class="section">
             <div class="content">
                 <h2 data-fr="À Propos" data-en="About">
@@ -51,7 +55,10 @@
                 </h2>
                 <p class="description" data-fr="Développeur passionné par la création d'expériences web innovantes et immersives. Spécialisé dans le développement front-end avec une touche créative unique." 
                    data-en="Passionate developer creating innovative and immersive web experiences. Specialized in front-end development with a unique creative touch.">
-                   Développeur passionné par la création d'expériences web innovantes et immersives. Spécialisé dans le développement front-end avec une touche créative unique.
+                   Je suis un <strong>développeur front-end</strong> en reconversion en tant que <strong>designer UX/UI</strong>. Appréciant ces deux aspects du web, j'utilise des outils comme Figma pour créer des maquettes et je suis ensuite capable de coder ces designs pour les transformer en prototypes interactifs ou en sites web fonctionnels. Mon rôle combine à la fois la créativité du design et la technicité du développement front-end, ce qui me permet de travailler efficacement avec les clients ainsi qu'avec mon équipe de designers et de développeurs sur l'ensemble du processus de création d'un produit numérique.<br><br>
+                    J'ai suivi une formation de 7 mois chez <strong>BeCode</strong> et effectué deux stages, l'un chez <strong>Wazo</strong> et l'autre chez <strong>Culturius</strong>. Je suis actuellement <strong>étudiant à l'ISFSC</strong>. Ces opportunités m'ont permis d'acquérir de l'expérience en tant que développeur <strong>front-end junior</strong>, d'améliorer mes compétences en codage, en design et de développer ma capacité à travailler en équipe.<br><br>
+                    Actuellement, je suis à la recherche d'un stage de 2 mois chez une entreprise située de préférence à <strong>Bruxelles ou proche de celle-ci</strong>, où je pourrais exercer en tant que <strong>designer UX/UI</strong>. Je suis passionné par la création d'interfaces utilisateur attrayantes et fonctionnelles, et je suis constamment à l'affût des nouvelles tendances et technologies du secteur.<br><br>
+                    Je suis convaincu que mon <strong>engagement</strong>, ma <strong>curiosité</strong> et ma <strong>volonté d'apprendre</strong> me permettront de contribuer de manière significative au succès de l'entreprise qui me donnera l'opportunité de m'épanouir en tant que <strong>designer UX/UI</strong>. Je reste ouvert aux collaborations et aux défis stimulants qui me permettront de développer encore davantage mes compétences dans le domaine du développement web.
                 </p>
                 <div class="skills">
                     <div class="skill">
@@ -59,36 +66,53 @@
                         <span>Figma</span>
                     </div>
                     <div class="skill">
-                        <i class="fab fa-html5"></i>
-                        <span>HTML</span>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-js"></i>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-react"></i>
-                        <span>Next.js</span>
-                    </div>
-                    <div class="skill">
                         <i class="fas fa-pen-nib"></i>
-                        <span>Illustrator</span>
+                        <span>Illustrator (Tosa)</span>
                     </div>
                     <div class="skill">
                         <i class="fas fa-image"></i>
                         <span>Photoshop</span>
                     </div>
                     <div class="skill">
-                        <i class="fab fa-bootstrap"></i>
-                        <span>Bootstrap</span>
+                        <i class="fab fa-react"></i>
+                        <span>Next.js</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-brands fa-css3-alt"></i>
+                        <span>CSS</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-brands fa-php"></i>
+                        <span>PHP</span>
                     </div>
                     <div class="skill">
                         <i class="fab fa-wordpress"></i>
                         <span>WordPress</span>
                     </div>
+                    <div class="skill">
+                        <i class="fa-brands fa-sass"></i>
+                        <span>SASS</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-bootstrap"></i>
+                        <span>Bootstrap</span>
+                    </div>
+                    <div class="skill">
+                        <img src="./assets/images/tailwind-css.svg" alt="Tailwind CSS" width="40" height="40">
+                        <span>Tailwind</span>
+                    </div>
                 </div>
         </section>
 
+        <!-- S3 - CV -->
         <section id="section3" class="section">
             <div class="content">
                 <h2 data-fr="CV" data-en="Resume">CV</h2>
@@ -102,44 +126,102 @@
             </div>
         </section>
 
+        <!-- S4 - Projets -->
         <section id="section4" class="section">
             <div class="content">
                 <h2 data-fr="Projets" data-en="Projects" class="section-title">Projets</h2>
                 <div class="projects-grid">
-                    <a href="#" class="project-card">
+                    <!-- card 1 -->
+                    <a href="https://cookup.emu.isfsc.be/" target="_blank" class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Project 1">
+                            <img src="./assets/images/cookup.png" alt="Project 1">
                             <div class="project-overlay">
-                                <i data-lucide="external-link"></i>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </div>
                         </div>
                         <div class="project-info">
                             <h3 data-fr="Portfolio Créatif" data-en="Creative Portfolio">
-                                Project 1
+                                Cook'up | P. d'étude (WordPress / PHP)
                             </h3>
                             <p data-fr="Design et développement d'un portfolio moderne avec animations et effets visuels." 
                                data-en="Design and development of a modern portfolio with animations and visual effects.">
-                               Description of project 1
+                               Site de création et de publication de recettes de cuisine 
                             </p>
                         </div>
                     </a>
-                    <a href="#" class="project-card">
+                    <!-- card 2 -->
+                    <a href="https://jniouen-wassim.github.io/React-PizzaClick/" target="_blank" class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Project 1">
+                            <img src="./assets/images/projet_pizza.png" alt="Project 1">
                             <div class="project-overlay">
-                                <i data-lucide="external-link"></i>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </div>
                         </div>
                         <div class="project-info">
                             <h3 data-fr="Portfolio Créatif" data-en="Creative Portfolio">
-                               ?
+                                PizzaClick | F. BeCode (React)
                             </h3>
-                            <p data-fr="?" 
-                               data-en="?">
-                               ?
+                            <p data-fr="Design et développement d'un portfolio moderne avec animations et effets visuels." 
+                               data-en="Design and development of a modern portfolio with animations and visual effects.">
+                               ? 
                             </p>
                         </div>
                     </a>
+                    <!-- card 3 -->
+                    <a href="https://jeanfabry.github.io/Showcase-website-fictional-restaurant/" target="_blank" class="project-card">
+                        <div class="project-image">
+                            <img src="./assets/images/projet_restaurant.png" alt="Project 1">
+                            <div class="project-overlay">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 data-fr="Portfolio Créatif" data-en="Creative Portfolio">
+                                Restaurant | F. BeCode (JavaScript / PHP)
+                            </h3>
+                            <p data-fr="Design et développement d'un portfolio moderne avec animations et effets visuels." 
+                               data-en="Design and development of a modern portfolio with animations and visual effects.">
+                               ? 
+                            </p>
+                        </div>
+                    </a>
+                    <!-- card 4 -->
+                    <a href="https://men-in-night.vercel.app/" target="_blank" class="project-card">
+                        <div class="project-image">
+                            <img src="./assets/images/projet_menInNight.png" alt="Project 1">
+                            <div class="project-overlay">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 data-fr="Portfolio Créatif" data-en="Creative Portfolio">
+                                Men In Night | P. perso (Next.js / Sass)
+                            </h3>
+                            <p data-fr="Design et développement d'un portfolio moderne avec animations et effets visuels." 
+                               data-en="Design and development of a modern portfolio with animations and visual effects.">
+                               ? 
+                            </p>
+                        </div>
+                    </a>
+                    <!-- card 5 -->
+                    <a href="https://culturius.com/fr?country=be" target="_blank" class="project-card">
+                        <div class="project-image">
+                            <img src="./assets/images/Culturius-stage.png" alt="Project 1">
+                            <div class="project-overlay">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 data-fr="Portfolio Créatif" data-en="Creative Portfolio">
+                                Culturius | Stage (Next.js / Sass)
+                            </h3>
+                            <p data-fr="Design et développement d'un portfolio moderne avec animations et effets visuels." 
+                               data-en="Design and development of a modern portfolio with animations and visual effects.">
+                               ? 
+                            </p>
+                        </div>
+                    </a>
+                    
                 </div>
             </div>
         </section>
