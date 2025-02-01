@@ -2,15 +2,45 @@
 /*============================================(  @IMPORT )======================================================================*/
 
 
+.container-customSvgWave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.container-customSvgWave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 81px;
+    transform: rotateY(180deg);
+}
+
+.container-customSvgWave .shape-fill {
+    fill: var(--white);
+}
+
+/** For mobile devices **/
 
 /*------------------▼----------------▼----------------------*/
 /*------------------▼ variables / global ▼----------------------*/
 :root {
     --primary: #53388C;
     --secondary: #F4D3A1;
-    --white: #ffffff;
+    --white: #F8F8F8;
     --dark: #1a1a1a;
     --space-gradient: linear-gradient(135deg, rgba(83, 56, 140, 0.05), rgba(244, 211, 161, 0.05));
+    --space-gradient-overlay: linear-gradient(
+        135deg,
+        rgba(244, 211, 161, 0.9),
+        rgba(83, 56, 140, 0.6),
+        rgba(226, 87, 154, 0.7)
+    );
+    --space-gradient-scrollBar: linear-gradient(45deg, #FF62C0 3%, #FFDC69 100%);
     --side-nav-width: 85px;
 }
 
@@ -120,16 +150,7 @@ body {
     z-index: 2;
 }
 
-.section h2 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    color: var(--primary);
-    position: relative;
-    display: inline-block;
-    
-}
-
-.section::before {
+/* .section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -146,6 +167,15 @@ body {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+} */
+
+.section h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    position: relative;
+    display: inline-block;
+    
 }
 
 .section h2::after {
@@ -158,6 +188,7 @@ body {
     background: var(--secondary);
     border-radius: 2px;
 }
+
 
 /*------------------▼ section 1 (Acceuil) ▼----------------------*/
 #section1 {
@@ -177,7 +208,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.0);
     z-index: 1;
 }
 .typing-text {
@@ -352,17 +383,13 @@ body {
 
 .project-overlay i {
     color: white;
-    opacity: 0;
+    opacity: 0.5;
     transition: all 0.3s ease;
     transform: translateY(20px);
 }
 
 .project-card:hover .project-overlay {
-    background: linear-gradient(
-        135deg,
-        rgba(147, 51, 234, 0.8),
-        rgba(126, 34, 206, 0.8)
-    );
+    background: var(--space-gradient-overlay);
 }
 
 .project-card:hover .project-overlay i {
@@ -430,6 +457,11 @@ body {
         font-size: 1rem;
     }
 
+    .container-customSvgWave svg {
+        width: calc(179% + 1.3px);
+        height: 59px;
+    }
+
     .skills {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
@@ -455,7 +487,7 @@ body {
 }
 
 /* Styles pour les écrans de largeur maximale 768px (Tablette) */
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 768px) { 
     .section {
         padding: 40px 20px 100px;
     }
@@ -523,8 +555,8 @@ body {
 /*------------------▼ Scroll bar Google ▼----------------------*/
 
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
 
 }
 
@@ -534,17 +566,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--secondary);
-    border: 30px none var(--secondary);
+    background: var(--space-gradient-scrollBar);
+    border: 30px none var(--space-gradient-scrollBar);
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--secondary);
+    background: var(--space-gradient-scrollBar);
 }
 
 ::-webkit-scrollbar-thumb:active {
-    background: var(--secondary);
+    background: var(--space-gradient-scrollBar);
 }
 
 ::-webkit-scrollbar-track {

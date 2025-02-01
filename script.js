@@ -93,4 +93,5 @@ document.addEventListener('DOMContentLoaded', () => {
     //     section.style.transition = 'all 0.5s ease-out';
     //     sectionObserver.observe(section);
     // });
+
 });
