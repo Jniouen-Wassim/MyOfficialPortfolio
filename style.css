@@ -30,7 +30,6 @@
 
 html {
     scroll-behavior: smooth;
-    /* cursor:none!important */
 }
 
 body {
@@ -59,6 +58,12 @@ body {
     background: var(--secondary);
     color: var(--primary);
     transform: translateY(-2px);
+}
+
+/* Ajoutez un style pour désactiver le bouton */
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
 }
 
 /*------------------▼ nav bar ▼----------------------*/
@@ -128,7 +133,7 @@ body {
     z-index: 2;
 }
 
-#section3::before {
+#sectionCv::before {
     content: '';
     position: absolute;
     top: 0;
@@ -139,7 +144,7 @@ body {
     z-index: 0;
 }
 
-/* #section3::before {
+/* #sectionProjects::before {
     content: '';
     position: absolute;
     top: 0;
@@ -179,8 +184,8 @@ body {
 }
 
 
-/*------------------▼ section 1 (Acceuil) ▼----------------------*/
-#section1 {
+/*------------------▼ section : Home ▼----------------------*/
+#sectionHome {
     background-image: url(./assets/images/2.jpg);
     background-size: cover;
     background-position: bottom;
@@ -190,7 +195,7 @@ body {
     justify-content: center;
 }
 
-#section1::after {
+#sectionHome::after {
     content: '';
     position: absolute;
     top: 0;
@@ -237,7 +242,7 @@ body {
     background: var(--primary);
 }
 
-.container-customSvgWaveSection1 {
+.container-customSvgWave-sectionHome {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -248,7 +253,7 @@ body {
     z-index: 20;
 }
 
-.container-customSvgWaveSection1 svg {
+.container-customSvgWave-sectionHome svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
@@ -256,20 +261,20 @@ body {
     transform: rotateY(180deg);
 }
 
-.container-customSvgWaveSection1 .shape-fill {
+.container-customSvgWave-sectionHome .shape-fill {
     fill: var(--white);
 }
 
-.container-customSvgWaveSection3, .container-customSvgWaveSection4 {
+.container-customSvgWave-sectionCv, .container-customSvgWave-sectionProjects {
     width: 100%;
     overflow: hidden;
-    line-height: 0; /*retire le retour à la ligne et donc l'espace entre ls s3 et le svg du haut*/
+    line-height: 0; /* Important: retire le retour à la ligne et donc l'espace entre la section s3 et le svg du haut*/
     z-index: 20;
 }
 
-/*------------------▼ section 2 (À propos de moi) ▼----------------------*/
+/*------------------▼ section : About ▼----------------------*/
 
-/* #section2 {} */
+/* #sectionAbout {}*/
 
 .flexContent {
     display: flex;
@@ -329,9 +334,9 @@ body {
 }
 
 
-/*------------------▼ section 3 (Mon CV) ▼----------------------*/
+/*------------------▼ section : CV ▼----------------------*/
 
-/* #section3 {} */
+/* #sectionCv {} */
 
 .download-cv {
     display: inline-block;
@@ -356,9 +361,9 @@ body {
     50% { transform: translateY(-10px); }
 }
 
-/*------------------▼ section 4 (Mes Projets) ▼----------------------*/
+/*------------------▼ section : Projects ▼----------------------*/
 
-/* #section4 {} */
+/* #sectionProjects {} */
 
 .projects-grid {
     display: grid;
@@ -398,10 +403,20 @@ body {
     object-fit: cover;
 }
 
+.project-info {
+    position: relative; /* Assure que le conteneur est positionné */
+    height: 100%;     /* Assure que le conteneur prend toute la hauteur disponible */
+    width: 100%;
+}
+
 .project-tag {
+    position: absolute;
     color: var(--secondary);
     font-size: 0.9rem;
-    text-align: right;
+    bottom: 0; /* Aligne en bas */
+    right: 0; /* Aligne à droite */
+    margin-right: 1rem;
+    margin-bottom: 1rem;
 }
 
 .project-overlay {
@@ -596,7 +611,7 @@ body {
         font-size: 1rem;
     }
 
-    .container-customSvgWaveSection1 svg {
+    .container-customSvgWave-sectionHome svg {
         width: calc(179% + 1.3px);
         height: 59px;
     }
@@ -624,7 +639,6 @@ body {
         padding: 0 15px;
     }
 }
-
 
 /*------------------▼-------------------▼----------------------*/
 /*------------------▼ Scroll bar Google ▼----------------------*/
