@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 typingText.textContent = '';
                 let charIndex = 0;
                 isTyping = true; // Définir le drapeau sur true
-                languageToggle.classList.add('disabled'); // Désactiver le bouton
+                languageToggle.classList.add('disabled'); // Désactiver le bouton le temps que l'animation du texte soit fini
 
                 // Fonction pour écrire le texte lettre par lettre
                 function typeText() {
@@ -115,5 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //     sectionObserver.observe(section);
     // });
     // ---------------------
+    
 
 });
