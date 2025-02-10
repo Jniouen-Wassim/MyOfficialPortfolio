@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 typingText.textContent = '';
                 let charIndex = 0;
                 isTyping = true; // Définir le drapeau sur true
-                languageToggle.classList.add('disabled'); // Désactiver le bouton le temps que l'animation du texte soit fini
+                languageToggle.classList.add('disabled'); // Désactiver le bouton le temps que l'animation du texte soit fini pour éviter les bugs de compilation de texte
 
                 // Fonction pour écrire le texte lettre par lettre
                 function typeText() {
@@ -56,33 +56,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---------------------
 
 
-    // --------------------- Effet de la souris sur la section 1
+    // --------------------- Effet (parallax)de la souris sur la section 1
         const sectionHome = document.getElementById('sectionHome');
         sectionHome.addEventListener('mousemove', (e) => {
             const { clientX, clientY } = e;
             const { width, height } = sectionHome.getBoundingClientRect();
-            const moveX = (clientX / width - 0.5) * 20;
-            const moveY = (clientY / height - 0.5) * 20;
+            const moveX = (clientX / width - 0.5) * 5; /* Fonctionnel, mais ne marche pas car l'image est trop petite en largeur */
+            const moveY = (clientY / height - 0.5) * 5;
             
             sectionHome.style.backgroundPosition = `${50 + moveX}% ${50 + moveY}%`;
         });
+    // ---------------------
 
-        // Gestion de la navigation
+        
+    // --------------------- Gestion de la navigation
         const navItems = document.querySelectorAll('.nav-item');
         const sections = document.querySelectorAll('.section');
 
-        // Observer les sections pour la navigation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const sectionId = entry.target.id;
-                    updateActiveNavItem(sectionId);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        sections.forEach(section => observer.observe(section));
-
+        // Fonction pour mettre à jour l'élément de navigation actif
         function updateActiveNavItem(sectionId) {
             navItems.forEach(item => {
                 item.classList.remove('active');
@@ -91,10 +82,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
+
+        // Écouteurs d'événements pour la navigation manuelle
+        navItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                const sectionId = this.getAttribute('href').substring(1);
+                
+                // Faire défiler jusqu'à la section
+                const targetSection = document.getElementById(sectionId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Observer les sections pour la navigation automatique (scroll)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+                    const sectionId = entry.target.id;
+                    updateActiveNavItem(sectionId);
+                }
+            });
+        }, {
+            threshold: [0.3] // Déclencher quand 30% de la section est visible
+        });
+
+        sections.forEach(section => observer.observe(section));
     // ---------------------
 
 
-    // --------------------- Animation d'entrée pour les sections
+    // --------------------- Animation d'entrée pour les sections (AOS)
     // const animateSection = (entries, observer) => {
     //     entries.forEach(entry => {
     //         if (entry.isIntersecting) {
