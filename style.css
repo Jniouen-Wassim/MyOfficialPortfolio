@@ -1,14 +1,22 @@
 /*==============================================================================================================================*/
 /*============================================(  @IMPORT )======================================================================*/
 
+/*Barlow*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,400;0,500;0,700;1,100;1,400&family=Salsa&display=swap');
+/*Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,100;1,400&family=Salsa&display=swap');
 
 /*------------------▼----------------▼----------------------*/
 /*------------------▼ variables / global ▼----------------------*/
+
 :root {
     --primary: #53388C;
     --secondary: #F4D3A1;
     --tertiary: #FF62C0;
+    --quaternary: #677de1;
+    --quinary: #665d77;
     --white: #F8F8F8;
+    --white-gray: #F4F3F3;
     --dark: #1a1a1a;
     --space-gradient: linear-gradient(135deg, rgba(83, 56, 140, 0.05), rgba(244, 211, 161, 0.05));
     /* --space-gradient: linear-gradient(135deg, rgba(83, 56, 140, 0), rgba(244, 211, 161, 0.1)); */
@@ -133,17 +141,8 @@ body {
     z-index: 2;
 }
 
-#sectionCv::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #F4F3F3;
-    z-index: 0;
-}
 
+/* section qui change de couleur aevc @keyframes gradientBG */
 /* #sectionProjects::before {
     content: '';
     position: absolute;
@@ -163,29 +162,42 @@ body {
     100% { background-position: 0% 50%; }
 } */
 
-.section h2 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    color: var(--primary);
-    position: relative;
+section .global-title {
     display: inline-block;
+    text-align: center;
+    margin: auto;
     
 }
 
-.section h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--secondary);
-    border-radius: 2px;
+.section h2 {
+    font-size: 3rem;
+    color: var(--primary);
+    position: relative;
+    display: inline-block;  
 }
 
+h4 {
+    width: 100%;
+    display: inline-block;
+    text-decoration: none;
+    color: #181A1B;
+    bottom: -10px;
+
+}
+
+h4::after {
+    content: '';
+    display: block;
+    border-radius: 20px;
+    height: 5px;
+    width: 100%;
+    background: var(--secondary);
+
+}
 
 /*------------------▼ section : Home ▼----------------------*/
 #sectionHome {
+    position: relative;
     background-image: url(./assets/images/2.jpg);
     background-size: cover;
     background-position: bottom;
@@ -205,6 +217,7 @@ body {
     background: rgba(0, 0, 0, 0.0);
     z-index: 1;
 }
+
 .typing-text {
     font-size: clamp(2rem, 8vw, 5rem);
     margin-bottom: clamp(1rem, 4vw, 2rem);
@@ -214,6 +227,7 @@ body {
     text-align: center;
     max-width: 90%;
 }
+
 .social-links {
     display: flex;
     gap: clamp(15px, 3vw, 30px);
@@ -246,6 +260,7 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
+    line-height: 0; /* Important: retire le retour à la ligne et donc l'espace entre la section s1 et s2 */
     width: 100%;
     overflow: hidden;
     line-height: 0;
@@ -337,6 +352,24 @@ body {
 /*------------------▼ section : CV ▼----------------------*/
 
 /* #sectionCv {} */
+
+#sectionCv::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #F4F3F3;
+    z-index: 0;
+}
+
+.img-cv {
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    width: 400px; 
+    height: 600px;
+}
 
 .download-cv {
     display: inline-block;
@@ -478,7 +511,7 @@ body {
   .ribbon span {
     font-size: 10px;
     font-weight: bold;
-    color: #FFF;
+    color: #FFFF;
     text-transform: uppercase;
     text-align: center;
     line-height: 20px;
@@ -511,20 +544,19 @@ body {
     border-top: 3px solid #79A70A;
   }
 
-
 /*------------------▼----------------▼----------------------*/
 /*------------------▼ Medias Queries ▼----------------------*/
 
 /* Styles pour les écrans de largeur maximale 768px (Tablette) */
-@media (min-width: 481px) and (max-width: 768px) { 
+@media (min-width: 481px) and (max-width: 768px) {
     .section {
         padding: 40px 20px 100px;
     }
 
     .content {
-        width: 100% ;
-     }
-     
+        width: 100%;
+    }
+
     .side-nav {
         position: fixed;
         left: 0;
@@ -545,6 +577,11 @@ body {
         font-size: 1rem;
     }
 
+    .img-cv {
+        width: 350px;
+        height: 500px;
+    }
+
     .skills {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
@@ -553,7 +590,6 @@ body {
 
     .skill {
         padding: 15px;
-        
     }
 
     .projects-grid {
@@ -569,8 +605,8 @@ body {
     }
 
     .content {
-        width: 100% ;
-     }
+        width: 100%;
+    }
 
     .side-nav {
         position: fixed;
@@ -592,15 +628,6 @@ body {
         font-size: 1rem;
     }
 
-    .description {
-        font-size: 1.2rem;
-        line-height: 1.8;
-        color: var(--dark);
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 0 15px;
-    }
-
     .typing-text {
         font-size: clamp(1.8rem, 6vw, 2.5rem);
     }
@@ -614,6 +641,11 @@ body {
     .container-customSvgWave-sectionHome svg {
         width: calc(179% + 1.3px);
         height: 59px;
+    }
+
+    .img-cv {
+        width: 250px;
+        height: 400px;
     }
 
     .skills {
@@ -638,6 +670,10 @@ body {
         grid-template-columns: 1fr;
         padding: 0 15px;
     }
+
+    .description {
+        padding: 0 15px;
+    }
 }
 
 /*------------------▼-------------------▼----------------------*/
@@ -646,7 +682,6 @@ body {
 ::-webkit-scrollbar {
     width: 4px;
     height: 4px;
-
 }
 
 ::-webkit-scrollbar-button {
