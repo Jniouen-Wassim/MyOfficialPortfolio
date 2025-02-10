@@ -9,12 +9,13 @@
 /*------------------▼----------------▼----------------------*/
 /*------------------▼ variables / global ▼----------------------*/
 
+/*------------------▼ variables styles ▼----------------------*/
 :root {
     --primary: #53388C;
     --secondary: #F4D3A1;
     --tertiary: #FF62C0;
     --quaternary: #677de1;
-    --quinary: #665d77;
+    --quinary: rgba(102, 93, 119, 0.6);
     --white: #F8F8F8;
     --white-gray: #F4F3F3;
     --dark: #1a1a1a;
@@ -30,6 +31,7 @@
     --side-nav-width: 85px;
 }
 
+/*------------------▼ Global styles ▼----------------------*/
 * {
     margin: 0;
     padding: 0;
@@ -41,40 +43,13 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
     background-color: var(--white);
     color: var(--dark);
 }
 
-.language-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    padding: 8px 16px;
-    background: var(--primary);
-    color: var(--white);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    font-weight: 600;
-}
-
-.language-toggle:hover {
-    background: var(--secondary);
-    color: var(--primary);
-    transform: translateY(-2px);
-}
-
-/* Ajoutez un style pour désactiver le bouton */
-.disabled {
-    pointer-events: none;
-    opacity: 0.5;
-}
-
-/*------------------▼ nav bar ▼----------------------*/
+/*----▼ nav bar ▼----*/
 .side-nav {
     position: fixed;
     left: 20px;
@@ -114,7 +89,6 @@ body {
     color: var(--primary);
 }
 
-/*------------------▼ Toute les "section" ▼----------------------*/
 .section {
     min-height: 100vh;
     display: flex;
@@ -126,6 +100,11 @@ body {
     overflow: hidden;
 }
 
+.section > * {
+    position: relative;
+    z-index: 2;
+}
+
 .content {
    min-width: 350px;
    max-width: 1200px;
@@ -135,12 +114,6 @@ body {
    justify-content: center;
    align-items: center;
 }
-
-.section > * {
-    position: relative;
-    z-index: 2;
-}
-
 
 /* section qui change de couleur aevc @keyframes gradientBG */
 /* #sectionProjects::before {
@@ -162,14 +135,42 @@ body {
     100% { background-position: 0% 50%; }
 } */
 
-section .global-title {
+/* Ajoutez un style pour désactiver le bouton des langues pendant l'animation pour éviter des bugs d'empilation de texte*/
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.language-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 8px 16px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: 600;
+}
+
+
+.language-toggle:hover {
+    background: var(--secondary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.container-title-h2 {
     display: inline-block;
     text-align: center;
     margin: auto;
-    
 }
 
-.section h2 {
+h2 {
+    font-family: 'Barlow', sans-serif;
     font-size: 3rem;
     color: var(--primary);
     position: relative;
@@ -182,7 +183,6 @@ h4 {
     text-decoration: none;
     color: #181A1B;
     bottom: -10px;
-
 }
 
 h4::after {
@@ -192,7 +192,6 @@ h4::after {
     height: 5px;
     width: 100%;
     background: var(--secondary);
-
 }
 
 /*------------------▼ section : Home ▼----------------------*/
@@ -200,7 +199,8 @@ h4::after {
     position: relative;
     background-image: url(./assets/images/2.jpg);
     background-size: cover;
-    background-position: bottom;
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -214,11 +214,12 @@ h4::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.0);
+    background: rgba(190, 29, 29, 0.05);
     z-index: 1;
 }
 
 .typing-text {
+    font-family: 'Barlow', sans-serif;
     font-size: clamp(2rem, 8vw, 5rem);
     margin-bottom: clamp(1rem, 4vw, 2rem);
     color: var(--white);
@@ -365,7 +366,7 @@ h4::after {
 }
 
 .img-cv {
-    border: 2px solid var(--primary);
+    border: 2px solid var(--quinary);
     border-radius: 10px;
     width: 400px; 
     height: 600px;
@@ -408,6 +409,7 @@ h4::after {
 }
 
 .project-card {
+    display: inline-block;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     border-radius: 0.5rem;
@@ -600,6 +602,21 @@ h4::after {
 
 /* Styles pour les écrans de largeur maximale 480px (Mobile) */
 @media (max-width: 480px) {
+
+    .nav-item.active {
+        transform: translateY(-3px);
+        background: var(--primary);
+        color: var(--white);
+    }
+
+    /* on ne supprime pas le hover mais on le modifie pour ne pas avoir 2 buttons actifs en même temps*/
+    .nav-item:hover {
+        transform: translateY(-3px);
+        background: var(--white);
+        color: var(--primary);
+
+    }
+    
     .section {
         padding: 40px 20px 100px;
     }
