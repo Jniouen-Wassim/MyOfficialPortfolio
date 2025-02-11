@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             function updateLanguage() {
                 const elements = translateContainer.querySelectorAll('[data-fr][data-en]');
                 elements.forEach(element => {
-                    if (element.id !== 'titrePrincipal') { // Ne pas mettre à jour le titre ici
+                    if (element.id !== 'typing-text') { // Ne pas mettre à jour le titre ici
                         element.innerHTML = element.dataset[currentLang];
                     }
                 });
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Fonction pour mettre à jour le texte à écrire
             function updateTypingText() {
-                const typingText = document.querySelector('.typing-text');
+                const typingText = document.querySelector('.h1-title');
                 const text = typingText.getAttribute(`data-${currentLang}`);
                 typingText.textContent = '';
                 let charIndex = 0;
