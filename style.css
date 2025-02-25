@@ -218,7 +218,7 @@ h4::after {
 }
 
 .h1-title {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: clamp(3rem, 8vw, 6rem);
     margin-bottom: clamp(1rem, 4vw, 2rem);
     color: var(--white);
