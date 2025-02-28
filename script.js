@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const elements = translateContainer.querySelectorAll('[data-fr][data-en]');
                 elements.forEach(element => {
                     if (element.id !== 'typing-text') { // Ne pas mettre à jour le titre ici
-                        element.innerHTML = element.dataset[currentLang];
+                        element.innerHTML = element.dataset[currentLang]; //On ne met pas textContent mais innerHtml pour détecter les balises dans data-fr et data-en
                     }
                 });
             }
@@ -132,5 +132,86 @@ document.addEventListener('DOMContentLoaded', () => {
     // });
     // ---------------------
     
+    // --------------------- Animation + menu circulaire de compétences
+    // const menuItems = document.querySelectorAll('.menu-item');
+    // const centerText = document.querySelector('.center-text');
+    // const centerIcon = document.querySelector('.center-icon');
+    // let currentIndex = 0;
+    // let rotationInterval;
+    // let priorityTimeout;
+    // let isPriorityActive = false;
 
+    // // Positionner les éléments du menu en cercle
+    // function positionMenuItems() {
+    //     const container = document.querySelector('.menu-container');
+    //     const containerWidth = container.offsetWidth;
+    //     const containerHeight = container.offsetHeight;
+    //     const radius = Math.min(containerWidth, containerHeight) * 0.4;
+        
+    //     menuItems.forEach((item, index) => {
+    //         const angle = (index * 72 - 90) * (Math.PI / 180); // 72° = 360° / 5 items
+    //         const x = radius * Math.cos(angle) + containerWidth / 2;
+    //         const y = radius * Math.sin(angle) + containerHeight / 2;
+            
+    //         item.style.left = `${x}px`;
+    //         item.style.top = `${y}px`;
+    //     });
+    // }
+
+    // // Mettre à jour le contenu central
+    // function updateCenterContent(index) {
+    //     const item = menuItems[index];
+    //     centerText.textContent = item.getAttribute('data-text');
+    //     centerIcon.innerHTML = item.querySelector('svg').outerHTML;
+        
+    //     // Mettre à jour la classe active
+    //     menuItems.forEach(item => item.classList.remove('active'));
+    //     menuItems[index].classList.add('active');
+
+    //     // Animation de la forme
+    //     const blob = document.querySelector('.blob');
+    //     blob.style.animation = 'none';
+    //     blob.offsetHeight; // Force reflow
+    //     blob.style.animation = null;
+    // }
+
+    // // Rotation automatique
+    // function startRotation() {
+    //     rotationInterval = setInterval(() => {
+    //         if (!isPriorityActive) {
+    //             currentIndex = (currentIndex + 1) % menuItems.length;
+    //             updateCenterContent(currentIndex);
+    //         }
+    //     }, 4000);
+    // }
+
+    // // Gérer les clics sur les éléments du menu
+    // menuItems.forEach((item, index) => {
+    //     item.addEventListener('click', () => {
+    //         currentIndex = index;
+    //         updateCenterContent(index);
+            
+    //         // Activer la priorité
+    //         isPriorityActive = true;
+            
+    //         // Nettoyer les timeouts existants
+    //         if (priorityTimeout) {
+    //             clearTimeout(priorityTimeout);
+    //         }
+            
+    //         // Définir un nouveau timeout
+    //         priorityTimeout = setTimeout(() => {
+    //             isPriorityActive = false;
+    //         }, 2000);
+    //     });
+    // });
+
+    // // Initialisation
+    // positionMenuItems();
+    // updateCenterContent(currentIndex);
+    // startRotation();
+
+    // // Gérer le redimensionnement
+    // window.addEventListener('resize', positionMenuItems);
+    // ---------------------
 });
