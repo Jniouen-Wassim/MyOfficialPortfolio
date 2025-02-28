@@ -259,11 +259,12 @@ h4::after {
 
 .container-customSvgWave-sectionHome {
     position: absolute;
-    bottom: -1px;/*new*/
+    bottom: -2px;
     left: 0;
     line-height: 0; /* Important: retire le retour à la ligne et donc l'espace entre la section s1 et s2 */
     width: 100%;
     overflow: hidden;
+    line-height: 0;
     transform: rotate(180deg);
     z-index: 20;
 }
@@ -278,7 +279,6 @@ h4::after {
 
 .container-customSvgWave-sectionHome .shape-fill {
     fill: var(--white);
-    margin-bottom: -1px;/*new*/
 }
 
 .container-customSvgWave-sectionCv, .container-customSvgWave-sectionProjects {
@@ -290,10 +290,7 @@ h4::after {
 
 /*------------------▼ section : About ▼----------------------*/
 
-#sectionAbout { /*new*/
-    position: relative;
-    top: -1px;
-}
+/* #sectionAbout {}*/
 
 .flexContent {
     display: flex;
