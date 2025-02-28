@@ -1,7 +1,8 @@
+
 /*==============================================================================================================================*/
 /*============================================(  @IMPORT )======================================================================*/
 
-/*Barlow &Roboto*/
+/*Barlow & Roboto*/
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,400;0,500;0,700;1,100;1,400&family=Salsa&display=swap');
 
 /*------------------▼----------------▼----------------------*/
@@ -258,12 +259,11 @@ h4::after {
 
 .container-customSvgWave-sectionHome {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;/*new*/
     left: 0;
     line-height: 0; /* Important: retire le retour à la ligne et donc l'espace entre la section s1 et s2 */
     width: 100%;
     overflow: hidden;
-    line-height: 0;
     transform: rotate(180deg);
     z-index: 20;
 }
@@ -278,6 +278,7 @@ h4::after {
 
 .container-customSvgWave-sectionHome .shape-fill {
     fill: var(--white);
+    margin-bottom: -1px;/*new*/
 }
 
 .container-customSvgWave-sectionCv, .container-customSvgWave-sectionProjects {
@@ -289,7 +290,10 @@ h4::after {
 
 /*------------------▼ section : About ▼----------------------*/
 
-/* #sectionAbout {}*/
+#sectionAbout { /*new*/
+    position: relative;
+    top: -1px;
+}
 
 .flexContent {
     display: flex;
@@ -338,8 +342,11 @@ h4::after {
 .skill i, .skill img{
     font-size: 2rem;
     color: var(--primary);
-    animation: float 3s ease-in-out infinite;
     margin-bottom: 10px;
+}
+
+.skill:hover i, .skill:hover img {
+    animation: float 3s ease-in-out;
 }
 
 .skill span {
@@ -744,6 +751,173 @@ h4::after {
     background: transparent;
 }
 
+/*------------------▼------------------▼----------------------*/
+/*------------------▼ Menu center blob ▼----------------------*/
+
+/* .menu-container {
+    position: relative;
+    width: min(500px, 90vw);
+    height: min(500px, 90vw);
+}
+
+.center-shape {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 30%;
+    z-index: 1;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.blob-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.blob {
+    width: 100%;
+    height: 100%;
+    fill: var(--quaternary);
+    animation: blob-animation 8s infinite;
+}
+
+@keyframes blob-animation {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    33% {
+        transform: scale(1.1) rotate(120deg);
+    }
+    66% {
+        transform: scale(0.9) rotate(240deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+.center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.center-icon {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.3s ease;
+}
+
+.center-text {
+    position: absolute;
+    top: calc(50% + 80px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.connection-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.connection-circle-bg {
+    stroke: var(--quinary);
+    opacity: 0.2;
+    stroke-width: 4;
+    fill: none;
+}
+
+.menu-items {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.menu-item {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1f2937;
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.menu-item:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background-color: #f9fafb;
+}
+
+.menu-item.active {
+    background: var(--quaternary);
+    color: white;
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+}
+
+@media (max-width: 640px) {
+    .menu-container {
+        width: 90vw;
+        height: 90vw;
+    }
+
+    .menu-item {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    .menu-item svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .center-shape {
+        width: 40%;
+        height: 40%;
+    }
+
+    .center-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .center-text {
+        font-size: 1rem;
+        top: calc(50% + 60px);
+    }
+} */
 
 /*------------------▼---------------▼----------------------*/
 /*------------------▼ Animation AOS ▼----------------------*/
