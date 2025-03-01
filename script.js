@@ -94,19 +94,31 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Observer les sections pour la navigation automatique (scroll)
-        const observer = new IntersectionObserver((entries) => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15 // Seuil bas pour une détection plus sensible
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+                if (entry.isIntersecting) {
                     const sectionId = entry.target.id;
+                    
+                    // Ajout de logs pour le débogage
+                    console.log(`Intersecting section: ${sectionId}`);
+                    console.log(`Intersection ratio: ${entry.intersectionRatio}`);
+                    
+                    // Mettre à jour l'élément de navigation actif
                     updateActiveNavItem(sectionId);
                 }
             });
-        }, {
-            threshold: [0.3] // Déclencher quand 30% de la section est visible
-        });
+        }, observerOptions);
 
-        sections.forEach(section => observer.observe(section));
+        // Observer toutes les sections
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
     // ---------------------(FIN)
 
     

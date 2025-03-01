@@ -152,13 +152,6 @@ body {
     font-weight: 600;
 }
 
-
-.language-toggle:hover {
-    background: var(--secondary);
-    color: var(--primary);
-    transform: translateY(-2px);
-}
-
 .container-title-h2 {
     display: inline-block;
     text-align: center;
@@ -717,12 +710,20 @@ h3.h3-skills {
 /* Styles pour les écrans de largeur minimale 768px (Desktop) */
 @media (min-width: 768px) {
     
-    /* À implémenter ici pour empêcher l'effet :hover sur mobile et tablette, car il n'est pas possible de survoler un écran tactile avec le doigt, ce qui pourrait activer deux boutons simultanément. */
+    /* Je mets la classe .nav-item:hover{...} ici en Media Query PC (comme une condition) pour empêcher l'effet :hover de se charger sur mobile et tablette, car il n'est pas possible de survoler un écran tactile avec le doigt, ce qui pourrait activer deux boutons simultanément. */
     .nav-item:hover {
         transform: translateY(-3px);
         background: var(--secondary);
         color: var(--primary);
     }
+
+    /*Idem ici*/
+    .language-toggle:hover {
+        transform: translateY(-2px);
+        background: var(--secondary);
+        color: var(--primary);
+    }
+    
 }
 
 /* Styles pour les écrans de largeur maximale 768px (Tablette) */
@@ -778,12 +779,6 @@ h3.h3-skills {
 
 /* Styles pour les écrans de largeur maximale 480px (Mobile) */
 @media (max-width: 480px) {
-
-    /* .nav-item:hover{
-        transform: translateY(-3px);
-        background: var(--primary);
-        color: var(--white);
-    } */
 
     .section {
         padding: 40px 20px 100px;
