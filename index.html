@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Wassim Jniouen</title>
-    <link rel="shortcut icon" href="./assets/img/Plan de travail 1.png" alt="Image de l'onglet">
-    <!-- Mon css -->
+    <meta name="description" content="Portfolio de Wassim Jniouen, UX/UI Designer">
+    <meta name="author" content="Wassim Jniouen">
+    <link rel="shortcut icon" href="./assets/images/galaxy.webp">
+    <!-- Mon CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous">
     <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" crossorigin="anonymous">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
+
 <body class="translate-container">
     <!-- S0 - Langue francaise / Anglais -->
     <button id="languageToggle" class="language-toggle"
@@ -22,21 +25,22 @@
     
     <!-- S0bis - Navigation -->
     <nav class="side-nav">
-        <a href="#sectionHome" class="nav-item active" data-section="1">
+        <a href="#sectionHome" class="nav-item active" title="Page d'accueil" data-section="1">
             <i class="fas fa-rocket"></i>
         </a>
-        <a href="#sectionAbout" class="nav-item" data-section="2">
+        <a href="#sectionAbout" class="nav-item" title="En savoir plus sur moi" data-section="2">
             <i class="fas fa-user-astronaut"></i>
         </a>
-        <a href="#sectionCv" class="nav-item" data-section="3">
+        <a href="#sectionCv" class="nav-item" title="Mon CV" data-section="3">
             <i class="fas fa-file-alt"></i>
         </a>
-        <a href="#sectionProjects" class="nav-item" data-section="4">
+        <a href="#sectionProjects" class="nav-item" title="Mes projets" data-section="4">
             <i class="fas fa-satellite"></i>
         </a>
     </nav>
-
+    
     <main>
+        
         <!-- S1 - Home -->
         <section id="sectionHome" class="section">           
             <h1 id="typing-text" class="h1-title" 
@@ -45,9 +49,9 @@
             ></h1>
 
             <div class="social-links">
-                <a href="mailto:jniouenwassim@hotmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/wassim-jniouen-953b651b9/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com/Jniouen-Wassim" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:jniouenwassim@hotmail.com" target="_blank" title="Envoyer un email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/wassim-jniouen-953b651b9/" target="_blank" title="Suivre mon compte LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/Jniouen-Wassim" target="_blank" title="Suivre mon compte GitHub"><i class="fab fa-github"></i></a>
             </div>
             <!-- SVG wave : 1 -->
             <div class="container-customSvgWave-sectionHome">
@@ -75,8 +79,8 @@
                     Cette nouvelle passion m'a permis de maîtriser des outils comme <strong>Figma</strong> pour créer des maquettes et les transformer en prototypes interactifs, aboutissant à la création de <strong>sites web fonctionnels</strong>. 
                     Mon rôle combine <strong>créativité</strong> et <strong>technicité</strong>, me permettant de collaborer efficacement avec des clients, designers et développeurs au sein d'une <strong>entreprise</strong> ou d'une <strong>start-up</strong>.
                     <br><br>
-                    Après une formation de 7 mois chez <strong>BeCode</strong> et des stages chez <strong>Wazo</strong> et <strong>Culturius</strong>, je suis actuellement <strong>étudiant à l'ISFSC</strong>. 
-                    Ces expériences m'ont permis de développer mes compétences en <strong>codage</strong>, <strong>design</strong> et <strong>travail en équipe</strong> à travers divers projets réalisés en collaboration.
+                    Après une formation de 7 mois chez <strong>BeCode</strong> et des stages chez <strong>Wazo</strong> et <strong>Culturius</strong>, je suis actuellement <strong>étudiant à l'ISFSC</strong>.
+                    Ces expériences m'ont permis de développer mes compétences en <strong>programmation</strong>, <strong>design</strong> et <strong>travail en équipe</strong> à travers divers projets réalisés en collaboration.
                     Je suis actuellement à la recherche d'un <strong>stage</strong> à <strong>Bruxelles</strong>, en présentiel ou à distance. N'hésitez pas à me contacter par <strong>email</strong> ou sur <strong>LinkedIn</strong>."
                     
                     data-en="I am a <strong>front-end developer</strong> transitioning into the field of <strong>UX/UI design</strong>. 
@@ -86,10 +90,10 @@
                     After a 7-month training program at <strong>BeCode</strong> and internships at <strong>Wazo</strong> and <strong>Culturius</strong>, I am currently a <strong>student at ISFSC</strong>. 
                     These experiences have allowed me to develop my skills in <strong>coding</strong>, <strong>design</strong>, and <strong>teamwork</strong> through various collaborative projects.
                     I am currently looking for an <strong>internship</strong> in <strong>Brussels</strong>, either on-site or remote. Feel free to contact me via <strong>email</strong> or <strong>LinkedIn</strong>."
-                ></p>   
-                <h3
-                    data-fr="Compétences techniques"
-                    data-en="Technical skills"
+                ></p>
+                <h3 class="h3-skills"
+                    data-fr="Mes compétences"
+                    data-en="My skills"
                 ></h3>
                 <div class="skills">
                     <div class="skill">
@@ -141,8 +145,8 @@
                         <span>Tailwind</span>
                     </div>
                 </div>
-                <!-- Menu center -->
-                <!-- <div class="menu-container">   
+                <!-- menu circulaire de competences -->
+                <div class="menu-container">
                     <div class="center-shape">
                         <div class="blob-container">
                             <svg viewBox="0 0 200 200" class="blob">
@@ -150,46 +154,36 @@
                             </svg>
                         </div>
                         <div class="center-content">
-                            <svg class="center-icon" viewBox="0 0 24 24" width="48" height="48">
-                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2Z"/>
-                            </svg>
+                            <i class="center-icon fa-solid fa-mobile-screen-button"></i>
                         </div>
                     </div>
-                    <div class="center-text">Mobile First</div> -->
-            
-                    <!-- SVG - Connection lines -->
-                    <!-- <svg class="connection-lines" viewBox="0 0 500 500">
+                    
+                    <!-- Ligne circulaire reliant les boutons du menu -->
+                    <svg class="connection-lines" viewBox="0 0 500 500">
                         <circle class="connection-circle-bg" cx="250" cy="250" r="200" />
-                    </svg> -->
-            
-                    <!-- Button menu -->
-                    <!-- <div class="menu-items">
-                        <button class="menu-item" data-text="Mobile First">
-                            <svg viewBox="0 0 24 24" width="24" height="24">
-                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2Z"/>
-                            </svg>
+                    </svg>
+                    
+                    <!-- Boutons du menu  -->
+                    <div class="menu-items">
+
+                        <div class="center-text">Mobile First</div>
+                        
+                        <button class="menu-item" data-text="Mobile First" aria-label="Mobile First" data-icon="fa-mobile-screen-button">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
                         </button>
-                        <button class="menu-item" data-text="Innovation">
-                            <svg viewBox="0 0 24 24" width="24" height="24">
-                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2 .5 3 .3.7.8 1.3 1.5 2 1 1 1.7 1.7 2 2.5M9 18h6m-3-2v2"/>
-                            </svg>
+                        <button class="menu-item" data-text="Innovation" aria-label="Innovation" data-icon="fa-lightbulb">
+                            <i class="fa-solid fa-lightbulb"></i>
                         </button>
-                        <button class="menu-item" data-text="Prototyping">
-                            <svg viewBox="0 0 24 24" width="24" height="24">
-                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2m8 3v4m-4-2h4"/>
-                            </svg>
+                        <button class="menu-item" data-text="Prototyping" aria-label="Prototyping" data-icon="fa-layer-group">
+                            <i class="fa-solid fa-layer-group"></i>
                         </button>
-                        <button class="menu-item" data-text="UX/UI">
-                            <svg viewBox="0 0 24 24" width="24" height="24">
-                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9 9 9 0 0 0-9 9 9 9 0 0 0 9 9Zm0-9v4.5m0-8.25V12"/>
-                            </svg>
+                        <button class="menu-item" data-text="UX/UI" aria-label="UX/UI" data-icon="fa-pen-ruler">
+                            <i class="fa-solid fa-pen-ruler"></i>
                         </button>
-                        <button class="menu-item" data-text="Re/Branding">
-                            <svg viewBox="0 0 24 24" width="24" height="24">
-                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-                            </svg>
+                        <button class="menu-item" data-text="Re/Branding" aria-label="Re/Branding" data-icon="fa-palette">
+                            <i class="fa-solid fa-palette"></i>
                         </button>
-                    </div> -->
+                    </div>
                 </div>
         </section>
 
@@ -200,7 +194,7 @@
         </div>
         <!-- S3 - CV --> 
         <section id="sectionCv" class="section">
-            <div class="content " data-aos="fade-right" data-aos-delay="100">
+            <div class="content" data-aos="fade-right" data-aos-delay="100">
                 <div class="container-title-h2">
                     <h2
                         data-fr="CV" 
@@ -213,7 +207,7 @@
                     data-en="Don't hesitate to download my CV to get a brief overview of my skills – it's free and non-commital!"
                 ></p>
                 <div>
-                    <img class="img-cv" src="./assets/images/Wassim Jniouen - Cv - Designer UX-UI (Stage).png" alt="Image de mon cv">
+                    <img class="img-cv" src="./assets/images/Wassim-Jniouen-Cv-Designer-UX-UI-_Stage_.webp" loading="lazy" alt="Image de mon cv">
                 </div>
                 <a href="./assets/images/Wassim Jniouen - Cv - Designer UX-UI (Stage).pdf" download class="download-cv" 
                     data-fr="Télécharger" 
@@ -244,19 +238,25 @@
                         <div>
                             <div class="ribbon"><span>+ Figma</span></div>
                             <div class="project-image">
-                                <img src="./assets/images/cookup.png" alt="Project 1">
+                                <img src="./assets/images/cookup.webp" loading="lazy" alt="Project 1 : cookup">
                                 <div class="project-overlay">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </div>
                             </div>
                             <div class="project-info">
                                 <h3>
-                                    Cook'up (WordPress / PHP)
+                                    Cook'up
                                 </h3>
                                 <p 
                                     data-fr="Site de création et de publication de recettes de cuisine pour les jeunes adultes." 
                                     data-en="Creation and publication of cooking recipes for young adults."
                                 ></p>
+                                <br><br> 
+                                <div class="project-mini-tags">
+                                    <span class="mini-tag">Figma</span>
+                                    <span class="mini-tag">WordPress</span>
+                                    <span class="mini-tag">PHP</span>
+                                </div>
                                 <br><br> 
                                 <p class="project-tag"
                                     data-fr="[ Projet Étudiant ]" 
@@ -269,19 +269,24 @@
                     <a href="https://culturius.com/fr?country=be" target="_blank" class="project-card">
                         <div>
                             <div class="project-image">
-                                <img src="./assets/images/Culturius-stage.png" alt="Project 1">
+                                <img src="./assets/images/Culturius-stage.webp" loading="lazy" alt="Project 2 : Culturius">
                                 <div class="project-overlay">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </div>
                             </div>
                             <div class="project-info">
                                 <h3>
-                                    Culturius (Next.js / Sass)
+                                    Culturius
                                 </h3>
                                 <p 
                                     data-fr="Création d'un site web pour la startup Culturius, visant à faire découvrir les événements locaux." 
                                     data-en="Creation of a website for the startup Culturius, aiming to discover local events."
                                 ></p>
+                                <br><br> 
+                                <div class="project-mini-tags">
+                                    <span class="mini-tag">Next.js</span>
+                                    <span class="mini-tag">Sass</span>
+                                </div>
                                 <br><br> 
                                 <p class="project-tag"
                                     data-fr="[ Projet de stage ]" 
@@ -294,19 +299,24 @@
                     <a href="https://jniouen-wassim.github.io/React-PizzaClick/" target="_blank" class="project-card">
                         <div> 
                             <div class="project-image">
-                                <img src="./assets/images/projet_pizza.png" alt="Project 1">
+                                <img src="./assets/images/projet_pizza.webp" loading="lazy" alt="Project 3 : PizzaClicker">
                                 <div class="project-overlay">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </div>
                             </div>
                             <div class="project-info">
                                 <h3>
-                                    PizzaClick (React)
+                                    PizzaClicker
                                 </h3>
                                 <p 
                                     data-fr="Site amusant basé sur le célèbre jeu 'Cookie Clicker'. Le but est d'avoir le plus de clic possible." 
                                     data-en="Fun website based on the famous game 'Cookie Clicker'. The goal is to have the most clicks possible."
                                 ></p>
+                                <br><br> 
+                                <div class="project-mini-tags">
+                                    <span class="mini-tag">React</span>
+                                    <span class="mini-tag">JavaScript</span>
+                                </div>
                                 <br><br> 
                                 <p class="project-tag"
                                     data-fr="[ Projet de formation ]" 
@@ -319,19 +329,24 @@
                     <a href="https://jeanfabry.github.io/Showcase-website-fictional-restaurant/" target="_blank" class="project-card">
                         <div>
                             <div class="project-image">
-                                <img src="./assets/images/projet_restaurant.png" alt="Project 1">
+                                <img src="./assets/images/projet_restaurant.webp" loading="lazy" alt="Project 4 : Restaurant">
                                 <div class="project-overlay">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </div>
                             </div>
                             <div class="project-info">
                                 <h3>
-                                    Restaurant (JavaScript / PHP)
+                                    Restaurant
                                 </h3>
                                 <p 
                                     data-fr="Création d'un site fictif pour un célèbre restaurant gastronomique." 
                                     data-en="Creation of a fake restaurant website."
                                 ></p>
+                                <br><br> 
+                                <div class="project-mini-tags">
+                                    <span class="mini-tag">PHP</span>
+                                    <span class="mini-tag">JavaScript</span>
+                                </div>
                                 <br><br> 
                                 <p class="project-tag"
                                     data-fr="[ Projet de formation ]" 
@@ -344,19 +359,24 @@
                     <a href="https://men-in-night.vercel.app/" target="_blank" class="project-card">
                         <div>
                             <div class="project-image">
-                                <img src="./assets/images/projet_menInNight.png" alt="Project 1">
+                                <img src="./assets/images/projet_menInNight.webp" loading="lazy" alt="Project 5 : Men In Night">
                                 <div class="project-overlay">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </div>
                             </div>
                             <div class="project-info">
                                 <h3>
-                                    Men In Night (Next.js / Sass)
+                                    Men In Night
                                 </h3>
                                 <p 
                                     data-fr="Création d'une carte de visite fictive pour un service de livraison de nourriture à domicile." 
                                     data-en="Creation of a fake visit card for a food delivery service."
                                 ></p>
+                                <br><br> 
+                                <div class="project-mini-tags">
+                                    <span class="mini-tag">Next.js</span>
+                                    <span class="mini-tag">Sass</span>
+                                </div>
                                 <br><br> 
                                 <p class="project-tag"
                                     data-fr="[ Projet personnel ]" 
@@ -370,10 +390,11 @@
         </section>
     </main>
 
+    <!-- Mon script -->
     <script src="script.js"></script>
-      <!-- AOS -->
-  <script>
-    AOS.init();
-  </script>
+    <!-- AOS -->
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
