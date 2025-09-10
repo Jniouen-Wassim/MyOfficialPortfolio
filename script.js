@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
             elements.forEach(element => {
                 if (element.id !== 'typing-text') { // Ne pas mettre à jour le titre ici
                     element.innerHTML = element.dataset[currentLang]; //On ne met pas textContent mais innerHtml pour détecter les balises dans data-fr et data-en
+                    // Mettre à jour les attributs alt des images Figma
+                    if (element.tagName === 'IMG' && element.parentElement.classList.contains('figma-button')) {
+                        element.alt = element.getAttribute(`data-${currentLang}`);
+                        element.title = element.getAttribute(`data-${currentLang}`);
+                    }
                 }
             });
         }
@@ -208,6 +213,51 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', positionMenuItems);
     // ---------------------(FIN)
 
+    // --------------------- Gestion des boutons Figma
+    const figmaModal = document.getElementById('figmaModal');
+    const figmaIframe = document.getElementById('figmaIframe');
+    const closeModal = document.querySelector('.close-modal');
+    const figmaButtons = document.querySelectorAll('.figma-button');
+
+    // Afficher la modale avec le bon iframe
+    figmaButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const figmaUrl = this.getAttribute('data-figma-url');
+            if (figmaUrl && !this.disabled) {
+                figmaIframe.src = figmaUrl;
+                figmaModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    // Fermer la modale
+    closeModal.addEventListener('click', function() {
+        figmaModal.style.display = 'none';
+        figmaIframe.src = '';
+        document.body.style.overflow = 'auto';
+    });
+
+    // Fermer en cliquant en dehors
+    figmaModal.addEventListener('click', function(e) {
+        if (e.target === figmaModal) {
+            figmaModal.style.display = 'none';
+            figmaIframe.src = '';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Fermer avec la touche Échap
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && figmaModal.style.display === 'flex') {
+            figmaModal.style.display = 'none';
+            figmaIframe.src = '';
+            document.body.style.overflow = 'auto';
+        }
+    });
+    // ---------------------(FIN)
 
     // --------------------- Animation d'entrée pour les sections (AOS)
         // const animateSection = (entries, observer) => {
@@ -230,4 +280,5 @@ document.addEventListener('DOMContentLoaded', () => {
         //     sectionObserver.observe(section);
         // });
     // ---------------------(FIN)
+
 });

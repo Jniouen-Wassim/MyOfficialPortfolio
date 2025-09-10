@@ -545,17 +545,32 @@ h3.h3-skills {
 }
 
 .project-card {
+    overflow: hidden;
     display: inline-block;
+    margin-top: 2rem;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
-    border-radius: 0.5rem;
-    margin-top: 2rem;
-    overflow: hidden;
+    border-radius: 0.5rem;   
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     text-decoration: none;
     color: inherit;
-    transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.project-card:hover:not(:has(button:hover)) {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover:not(:has(button:hover)) .project-overlay {
+    background: var(--space-gradient-overlay);
+}
+
+.project-card:hover:not(:has(button:hover)) .project-overlay i {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-image {
@@ -567,6 +582,114 @@ h3.h3-skills {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Style des boutons Figma */
+.figma-button {
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.figma-button::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: var(--space-gradient-scrollBar);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: rotate 2s linear infinite;
+    background-size: 200% 200%;
+}
+
+.figma-button:not(:disabled):hover::before {
+    opacity: 1;
+}
+
+.figma-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    background: white;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.figma-button:not(:disabled):hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.figma-button:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.figma-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+/* Style du modale/iframe Figma */
+.figma-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1001;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.figma-modal iframe {
+    width: 90%;
+    height: 90%;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.7);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1002;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.close-modal:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
 }
 
 .project-info {
@@ -584,6 +707,13 @@ h3.h3-skills {
     right: 0; /* Aligne à droite */
     margin-right: 1rem;
     margin-bottom: 1rem;
+}
+
+.project-tag-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .project-overlay {
@@ -608,16 +738,6 @@ h3.h3-skills {
     transform: translateY(20px);
 }
 
-
-.project-card:hover .project-overlay {
-    background: var(--space-gradient-overlay);
-}
-
-.project-card:hover .project-overlay i {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .project-info {
     padding: 1rem;
     text-align: left;
@@ -635,13 +755,14 @@ h3.h3-skills {
 }
 
 .project-info p:nth-child(2) {
-    height: 5rem;
+    height: auto;
 }
 
 .project-mini-tags {
     display: flex;
     gap: 0.5rem;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
 }
 
 .mini-tag {
@@ -656,53 +777,40 @@ h3.h3-skills {
     transition: opacity 0.3s ease;
 }
 
-/*rubans - figma*/
-.ribbon {
-    position: absolute;
-    right: -5px; top: -5px;
-    z-index: 10;
-    overflow: hidden;
-    width: 75px; height: 75px;
-    text-align: right;
-  }
-
-  .ribbon span {
-    font-size: 10px;
-    font-weight: bold;
-    color: #FFFF;
-    text-transform: uppercase;
+/*------------------▼ Footer ▼----------------------*/
+.site-footer {
+    background-color: var(--white);
+    padding: 1.5rem 0;
     text-align: center;
-    line-height: 20px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    width: 100px;
-    display: block;
-    background: #79A70A;
-    background: linear-gradient(#9BC90D 0%, #79A70A 100%);
-    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
-    position: absolute;
-    top: 19px; right: -21px;
-  }
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
 
-  .ribbon span::before {
-    content: "";
-    position: absolute; left: 0px; top: 100%;
-    z-index: -1;
-    border-left: 3px solid #79A70A;
-    border-right: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    border-top: 3px solid #79A70A;
-  }
-  
-  .ribbon span::after {
-    content: "";
-    position: absolute; right: 0px; top: 100%;
-    z-index: -1;
-    border-left: 3px solid transparent;
-    border-right: 3px solid #79A70A;
-    border-bottom: 3px solid transparent;
-    border-top: 3px solid #79A70A;
-  }
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: var(--dark);
+    opacity: 0.8;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Media query pour les écrans mobiles */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 1rem 0;
+        margin-bottom: 60px; /* Ajout d'une marge pour la barre de navigation mobile */
+    }
+    
+    .copyright {
+        font-size: 0.7rem;
+    }
+}
 
 /*------------------▼----------------▼----------------------*/
 /*------------------▼ Medias Queries ▼----------------------*/
