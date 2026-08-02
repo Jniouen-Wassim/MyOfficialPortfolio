@@ -324,7 +324,7 @@ main, .footer, .side-nav, .language-toggle { position: relative; z-index: 2; }
     font-style: italic;
     font-size: clamp(4.5rem, 10vw, 8rem);
     color: var(--text);
-    opacity: 0.05;
+    opacity: 0.08;
     line-height: 1;
     pointer-events: none;
     z-index: -1;
@@ -343,13 +343,14 @@ main, .footer, .side-nav, .language-toggle { position: relative; z-index: 2; }
 .eyebrow i { font-size: 0.85rem; }
 
 .section-title {
+    width: 100%;
     font-family: var(--font-display);
     font-weight: 500;
     font-style: italic;
     font-size: clamp(1.9rem, 4vw, 2.7rem);
     letter-spacing: -0.01em;
-    margin-bottom: 3rem;
-    max-width: 20ch;
+    margin-bottom: 2rem;
+    text-align: start;
 }
 
 h3 { font-family: var(--font-body); font-weight: 700; color: var(--text); }
@@ -895,7 +896,7 @@ h3 { font-family: var(--font-body); font-weight: 700; color: var(--text); }
     transition: var(--ease) 0.25s;
 }
 .filter-btn:hover { border-color: var(--accent); color: var(--text); }
-.filter-btn.active { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.filter-btn.active { background: var(--accent); border-color: var(--accent); color: var( --nav-w); }
 
 .projects-grid {
     display: grid;
@@ -1077,7 +1078,7 @@ h3 { font-family: var(--font-body); font-weight: 700; color: var(--text); }
 .section-contact { text-align: center; align-items: center; }
 .section-contact .content { display: flex; flex-direction: column; align-items: center; }
 .section-contact .section-head::before { display: none; }
-.section-head-centered { width: 100%; max-width: 480px; }
+.section-head-centered { width: 100%; max-width: 1080px; }
 .section-head-row {
     display: flex;
     align-items: baseline;
@@ -1087,16 +1088,22 @@ h3 { font-family: var(--font-body); font-weight: 700; color: var(--text); }
 }
 .section-head-row .eyebrow { margin-bottom: 0; }
 .section-head-number {
+    content: attr(data-index);
+    position: absolute;
+    top: -0.4em;
+    right: 0;
     font-family: var(--font-display);
     font-style: italic;
-    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    font-size: clamp(4.5rem, 10vw, 8rem);
     color: var(--text);
-    opacity: 0.32;
+    opacity: 0.08;
     line-height: 1;
+    pointer-events: none;
+    z-index: -1;
 }
 .section-contact .head-glow-mauve { left: -20px; top: -10px; }
 .section-contact .head-glow-green { right: -20px; left: auto; top: -10px; }
-.contact-desc { max-width: 44ch; color: var(--text-dim); margin-bottom: 1.6rem; }
+.contact-desc { color: var(--text-dim); margin-bottom: 1.6rem; text-align: center; width: 100%; text-align: start; }
 .contact-email {
     font-family: var(--font-display);
     font-style: italic;
@@ -1112,6 +1119,7 @@ h3 { font-family: var(--font-body); font-weight: 700; color: var(--text); }
     position: static;
     flex-direction: row;
     gap: 1.8rem;
+    margin-top: 15px;
 }
 .social-rail-footer a { font-size: 1.2rem; }
 
