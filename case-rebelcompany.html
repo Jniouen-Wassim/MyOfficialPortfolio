@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RebelCompany — Étude de cas · Wassim Jniouen</title>
+    <meta name="description" content="Étude de cas : refonte UX/UI complète pour RebelCompany, agence de communication digitale.">
+    <link rel="shortcut icon" href="./assets/img/Plan de travail 1.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="translate-container">
+
+    <div class="starfield" aria-hidden="true"></div>
+    <canvas class="particle-wave" id="particleWave" aria-hidden="true"></canvas>
+
+    <button id="languageToggle" class="language-toggle" data-fr="EN" data-en="FR" aria-label="Changer de langue"></button>
+    <a href="index.html#sectionProjects" class="case-back">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        <span data-fr="Retour au portfolio" data-en="Back to portfolio"></span>
+    </a>
+
+    <main class="case-main">
+        <div class="case-hero" data-reveal>
+            <p class="eyebrow"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span data-fr="// Étude de cas" data-en="// Case study"></span></p>
+            <h1 class="case-title">RebelCompany</h1>
+            <p class="case-subtitle"
+               data-fr="Refonte UX/UI complète et mobile-first pour une agence de communication digitale, afin de moderniser son image et renforcer sa crédibilité."
+               data-en="A complete, mobile-first UX/UI redesign for a digital communication agency, to modernize its image and strengthen its credibility."
+            ></p>
+
+            <div class="case-image-frame">
+                <img src="./assets/images/rebelcompany/rebelCompany.png" alt="RebelCompany">
+            </div>
+
+            <div class="case-meta-row">
+                <div class="case-meta">
+                    <span class="case-meta-label" data-fr="Rôle" data-en="Role"></span>
+                    <span class="case-meta-value" data-fr="Design UX/UI" data-en="UX/UI Design"></span>
+                </div>
+                <div class="case-meta">
+                    <span class="case-meta-label" data-fr="Durée" data-en="Duration"></span>
+                    <span class="case-meta-value" data-fr="Stage · 3 mois" data-en="Internship · 3 months"></span>
+                </div>
+                <div class="case-meta">
+                    <span class="case-meta-label">Stack</span>
+                    <span class="case-meta-value" data-fr="Figma · Prototypage" data-en="Figma · Prototyping"></span>
+                </div>
+            </div>
+
+            <div class="case-hero-actions">
+                <a href="https://www.figma.com/proto/GDb5noUJIazzpFXl5fwf7l/Rebel-Company--Perso-?page-id=1%3A3&node-id=403-2045&p=f&viewport=9233%2C1104%2C0.17&t=0dD31avL1FOVZyWV-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=362%3A774" target="_blank" rel="noopener" class="btn btn-primary">
+                    <i class="fa-brands fa-figma" aria-hidden="true"></i>
+                    <span data-fr="Prototype desktop" data-en="Desktop prototype"></span>
+                </a>
+                <a href="https://www.figma.com/proto/GDb5noUJIazzpFXl5fwf7l/Rebel-Company--Perso-?page-id=0%3A1&node-id=424-17791&viewport=13897%2C747%2C0.12&t=rbCd3s89z2rGWWfo-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=424%3A17791" target="_blank" rel="noopener" class="btn btn-primary">
+                    <i class="fa-brands fa-figma" aria-hidden="true"></i>
+                    <span data-fr="Prototype mobile" data-en="Mobile prototype"></span>
+                </a>
+                <a href="https://rebelcompany.be/" target="_blank" rel="noopener" class="btn btn-ghost">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    <span data-fr="Voir le site actuel" data-en="View current site"></span>
+                </a>
+            </div>
+
+            <div class="case-hero-note">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                <span data-fr="La maquette UX/UI est finalisée, mais n'a pas encore été intégrée par un développeur. Le site actuellement en ligne ne reflète donc pas encore ce travail : les prototypes Figma ci-dessus sont la meilleure façon d'en voir le résultat." data-en="The UX/UI mockup is finalized, but has not yet been built by a developer. The site currently live does not reflect this work yet: the Figma prototypes above are the best way to see the result."></span>
+            </div>
+        </div>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">01 — <span data-fr="Contexte" data-en="Context"></span></span>
+            <h2 data-fr="Une agence qui a besoin de se réinventer" data-en="An agency that needed to reinvent itself"></h2>
+            <p data-fr="RebelCompany est une agence de communication digitale qui accompagne des entrepreneurs dans la création de leur site web. Ma mission consistait à réaliser une refonte complète du site de l'agence elle-même, afin qu'il reflète mieux son savoir-faire."
+               data-en="RebelCompany is a digital communication agency that helps entrepreneurs build their websites. My mission was to carry out a complete redesign of the agency's own site, so it would better reflect its expertise."
+            ></p>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">02 — <span data-fr="Problématique" data-en="Problem"></span></span>
+            <h2 data-fr="Une image qui ne portait pas assez" data-en="An image that didn't carry enough weight"></h2>
+            <p data-fr="Le site existant peinait à convaincre : il ne rendait pas justice au professionnalisme de l'agence, la navigation manquait de clarté, et l'expérience mobile n'était pas prioritaire alors qu'une grande partie des prospects visitent le site depuis leur téléphone."
+               data-en="The existing site struggled to convince: it didn't do justice to the agency's professionalism, navigation lacked clarity, and mobile wasn't treated as a priority even though a large share of prospects browse from their phone."
+            ></p>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">03 — <span data-fr="Objectifs" data-en="Objectives"></span></span>
+            <h2 data-fr="Ce que la refonte devait apporter" data-en="What the redesign needed to deliver"></h2>
+            <div class="case-grid">
+                <div class="case-card">
+                    <h3 data-fr="Moderniser l'image" data-en="Modernize the image"></h3>
+                    <p data-fr="Une identité de marque plus affirmée." data-en="A stronger brand identity."></p>
+                </div>
+                <div class="case-card">
+                    <h3 data-fr="Renforcer la crédibilité" data-en="Strengthen credibility"></h3>
+                    <p data-fr="Rassurer les prospects sur le sérieux de l'agence." data-en="Reassure prospects about the agency's professionalism."></p>
+                </div>
+                <div class="case-card">
+                    <h3 data-fr="Penser mobile-first" data-en="Think mobile-first"></h3>
+                    <p data-fr="Une expérience pensée d'abord pour le mobile." data-en="An experience designed for mobile first."></p>
+                </div>
+                <div class="case-card">
+                    <h3 data-fr="Améliorer la navigation" data-en="Improve navigation"></h3>
+                    <p data-fr="Un parcours plus clair vers les offres." data-en="A clearer path towards the agency's offers."></p>
+                </div>
+                <div class="case-card">
+                    <h3 data-fr="Augmenter les conversions" data-en="Increase conversions"></h3>
+                    <p data-fr="Faciliter la prise de contact." data-en="Make it easier to get in touch."></p>
+                </div>
+                <div class="case-card">
+                    <h3 data-fr="Faciliter l'intégration" data-en="Ease integration"></h3>
+                    <p data-fr="Une maquette facilement intégrable par un développeur." data-en="A mockup easy for a developer to build."></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">04 — <span data-fr="Démarche UX/UI" data-en="UX/UI process"></span></span>
+            <h2 data-fr="Une approche mobile-first" data-en="A mobile-first approach"></h2>
+            <p data-fr="J'ai débuté par une refonte de l'identité visuelle, pensée pour renforcer la crédibilité de l'agence auprès de ses prospects. L'architecture de l'information et les wireframes ont été construits mobile-first, avant d'aboutir à des prototypes interactifs haute fidélité, desktop et mobile, sur Figma."
+               data-en="I started with a redesign of the visual identity, meant to strengthen the agency's credibility with prospects. Information architecture and wireframes were built mobile-first, leading to high-fidelity interactive prototypes, desktop and mobile, in Figma."
+            ></p>
+            <ul>
+                <li data-fr="Refonte de l'identité de marque pour renforcer la crédibilité" data-en="Brand identity redesign to strengthen credibility"></li>
+                <li data-fr="Architecture de l'information et wireframes mobile-first" data-en="Mobile-first information architecture and wireframes"></li>
+                <li data-fr="Prototypes interactifs haute fidélité (desktop &amp; mobile) sur Figma" data-en="High-fidelity interactive prototypes (desktop &amp; mobile) in Figma"></li>
+                <li data-fr="Maquette structurée pour faciliter une future intégration" data-en="Mockup structured to ease a future integration"></li>
+            </ul>
+            <div class="case-image-frame">
+                <img src="./assets/images/rebelcompany/designSystem.png" alt="Design System RebelCompany">
+            </div>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">05 — <span data-fr="Résultat" data-en="Result"></span></span>
+            <h2 data-fr="Une maquette prête, une intégration en attente" data-en="A ready mockup, integration pending"></h2>
+            <p data-fr="La maquette UX/UI a été finalisée et livrée sous forme de prototypes Figma interactifs, desktop et mobile. Elle n'a pas encore été intégrée par un développeur : le site actuellement en ligne correspond donc encore à l'ancienne version, et non à ce travail."
+               data-en="The UX/UI mockup was finalized and delivered as interactive Figma prototypes, desktop and mobile. It has not yet been built by a developer: the site currently live still reflects the previous version, not this work."
+            ></p>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">06 — <span data-fr="Compétences &amp; outils" data-en="Skills &amp; tools"></span></span>
+            <h2 data-fr="Ce que ce projet a mobilisé" data-en="What this project called on"></h2>
+            <div class="case-tags">
+                <span class="case-tag" data-fr="Identité de marque" data-en="Brand identity"></span>
+                <span class="case-tag" data-fr="Mobile-first" data-en="Mobile-first"></span>
+                <span class="case-tag" data-fr="Wireframing" data-en="Wireframing"></span>
+                <span class="case-tag" data-fr="Prototypage haute fidélité" data-en="High-fidelity prototyping"></span>
+                <span class="case-tag">Figma</span>
+            </div>
+        </section>
+
+        <div class="case-footer">
+            <a href="case-lorenergie.html" class="btn btn-ghost">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                <span data-fr="Étude de cas précédente" data-en="Previous case study"></span>
+            </a>
+            <a href="case-jouermalin.html" class="btn btn-ghost">
+                <span data-fr="Étude de cas suivante" data-en="Next case study"></span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </main>
+
+    <script src="case-study.js"></script>
+</body>
+</html>
