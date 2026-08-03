@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wassim Jniouen - Designer UX/UI &amp; Web Designer</title>
     <meta name="description" content="Portfolio de Wassim Jniouen, Designer UX/UI basé à Bruxelles, à l'aise en intégration front-end.">
-    <link rel="shortcut icon" href="./assets/img/Plan de travail 1.png">
+    <link rel="shortcut icon" href="./assets/images/WJ.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -15,8 +15,13 @@
     <div class="starfield" aria-hidden="true"></div>
     <canvas class="particle-wave" id="particleWave" aria-hidden="true"></canvas>
 
+    <!-- Logo WJ -->
+    <a href="#sectionHome" class="logo-link" aria-label="Retour à l'accueil">
+        <img src="./assets/images/WJ.svg" alt="WJ Logo" class="logo-wj">
+    </a>
+
     <!-- Sélecteur de langue -->
-    <button id="languageToggle" class="language-toggle" data-fr="EN" data-en="FR" aria-label="Changer de langue"></button>
+    <button id="languageToggle" class="language-toggle" aria-label="Changer de langue"></button>
 
     <!-- Navigation : ligne de trajectoire avec points-repères -->
     <nav class="side-nav" aria-label="Navigation principale">
@@ -72,12 +77,12 @@
                 <h1 id="typing-text" class="hero-name" data-fr="Wassim Jniouen" data-en="Wassim Jniouen"></h1>
                 <h2 class="hero-role" data-fr="Designer UX/UI &amp; Web Designer" data-en="UX/UI Designer &amp; Web Designer"></h2>
                 <p class="hero-desc"
-                    data-fr="Diplômé avec distinction d'un Bachelor en création digitale, je conçois des parcours utilisateurs sur Figma et je maîtrise l'intégration front-end pour <span class='highlight'>dialoguer efficacement avec les développeurs</span> et livrer des maquettes pensées pour être codées."
-                    data-en="Graduated with distinction in Digital Creation, I design user journeys in Figma and I'm fluent in front-end integration to <span class='highlight'>communicate effectively with developers</span> and deliver mockups built to be coded."
+                    data-fr="Diplômé avec distinction d'un bachelier en création digitale, je suis à la recherche d'un poste de Designer UX/UI en CDI (temps plein ou temps partiel) à Bruxelles. Je conçois des parcours utilisateurs sur Figma et je maîtrise l'intégration front-end pour <span class='highlight'>dialoguer efficacement avec les développeurs</span> et livrer des maquettes pensées pour faciliter leur intégration."
+                    data-en="I graduated with honors with a bachelor's degree in digital design and am looking for a permanent UX/UI Designer position (full-time or part-time) in Brussels. I design user flows in Figma and am proficient in front-end integration, which allows me to <span class='highlight'>communicate effectively with developers</span> and deliver mockups designed to facilitate their integration."
                 ></p>
                 <div class="availability">
                     <span class="pulse-dot" aria-hidden="true"></span>
-                    <span data-fr="Recherche un poste de Designer UX/UI en CDI à Bruxelles" data-en="Looking for a full-time UX/UI Designer role in Brussels"></span>
+                    <span data-fr="Post • UX/UI Designer • CDI • Bruxelles" data-en="Role • UX/UI Designer • Full-time • Brussels"></span>
                 </div>
                 <div class="hero-actions">
                     <a href="#sectionProjects" class="btn btn-primary" data-fr="Voir mes projets" data-en="View my work"></a>
@@ -146,9 +151,9 @@
                             <span class="orbit-center-text" id="orbitText">Figma</span>
                         </div>
                         <button type="button" class="orbit-item" style="--i:0" data-icon="fa-brands fa-figma" data-text-fr="Figma" data-text-en="Figma" aria-label="Figma"><i class="fa-brands fa-figma" aria-hidden="true"></i></button>
-                        <button type="button" class="orbit-item" style="--i:1" data-icon="fa-solid fa-layer-group" data-text-fr="Octopus - Parcours utilisateur" data-text-en="Octopus - User flows" aria-label="Octopus"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></button>
-                        <button type="button" class="orbit-item" style="--i:2" data-icon="fa-solid fa-diagram-project" data-text-fr="Miro - Brainstorming" data-text-en="Miro - Brainstorming" aria-label="Miro"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></button>
-                        <button type="button" class="orbit-item" style="--i:3" data-icon="fa-solid fa-vial" data-text-fr="Useberry - Tests utilisateurs" data-text-en="Useberry - User testing" aria-label="Useberry"><i class="fa-solid fa-vial" aria-hidden="true"></i></button>
+                        <button type="button" class="orbit-item" style="--i:1" data-icon="fa-solid fa-layer-group" data-text-fr="Octopus" data-text-en="Octopus" aria-label="Octopus"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></button>
+                        <button type="button" class="orbit-item" style="--i:2" data-icon="fa-solid fa-diagram-project" data-text-fr="Miro" data-text-en="Miro" aria-label="Miro"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></button>
+                        <button type="button" class="orbit-item" style="--i:3" data-icon="fa-solid fa-vial" data-text-fr="Useberry" data-text-en="Useberry" aria-label="Useberry"><i class="fa-solid fa-vial" aria-hidden="true"></i></button>
                         <button type="button" class="orbit-item" style="--i:4" data-text-fr="Next.js" data-text-en="Next.js" aria-label="Next.js"><svg class="icon-nextjs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.3" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 7.5v9M8 7.5l8.2 9.4M15.3 7.5v5.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         <button type="button" class="orbit-item" style="--i:5" data-icon="fa-solid fa-wand-magic-sparkles" data-text-fr="IA" data-text-en="AI" aria-label="IA"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></button>
                     </div>
@@ -428,7 +433,7 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div class="modal-image" id="modalImageWrap">
-                <img id="modalImage" src="" alt="">
+                <img id="modalImage" src="" alt="" class="zoomable-image">
             </div>
             <div class="modal-body">
                 <div class="modal-head">
@@ -442,6 +447,16 @@
                 <div class="modal-actions" id="modalActions"></div>
             </div>
             <div class="modal-scroll-fade" aria-hidden="true"></div>
+        </div>
+    </div>
+
+    <!-- Lightbox pour zoom d'image -->
+    <div class="lightbox" id="imageLightbox" hidden>
+        <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="">
         </div>
     </div>
 

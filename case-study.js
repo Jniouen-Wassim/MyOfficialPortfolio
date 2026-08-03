@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --------------------- Langue FR / EN
     const languageToggle = document.getElementById('languageToggle');
     const translateContainer = document.querySelector('.translate-container');
-    let currentLang = 'fr';
+    let currentLang = localStorage.getItem('language') || 'fr';
 
     function updateLanguage() {
         translateContainer.querySelectorAll('[data-fr][data-en]').forEach(el => {
@@ -11,11 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         translateContainer.setAttribute('data-lang', currentLang);
         document.documentElement.setAttribute('lang', currentLang);
-        languageToggle.textContent = currentLang === 'fr' ? 'EN' : 'FR';
+        if (languageToggle) {
+            languageToggle.textContent = currentLang === 'fr' ? 'EN' : 'FR';
+        }
     }
 
     languageToggle.addEventListener('click', () => {
         currentLang = currentLang === 'fr' ? 'en' : 'fr';
+        localStorage.setItem('language', currentLang);
         updateLanguage();
     });
 
@@ -87,6 +90,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 requestAnimationFrame(animateWave);
             });
         }
+    }
+    // ---------------------
+
+
+    // --------------------- Lightbox pour zoom d'image
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const zoomableImages = document.querySelectorAll('.zoomable-image');
+
+    if (lightbox && lightboxImage && lightboxClose) {
+        function openLightbox(imageSrc) {
+            lightboxImage.src = imageSrc;
+            lightbox.hidden = false;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.hidden = true;
+            lightboxImage.src = '';
+            document.body.style.overflow = '';
+        }
+
+        zoomableImages.forEach(img => {
+            img.addEventListener('click', () => {
+                if (img.src) {
+                    openLightbox(img.src);
+                }
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !lightbox.hidden) closeLightbox(); });
     }
     // ---------------------
 });

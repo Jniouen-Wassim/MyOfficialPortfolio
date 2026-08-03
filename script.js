@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --------------------- Langue FR / EN
     const languageToggle = document.getElementById('languageToggle');
     const translateContainer = document.querySelector('.translate-container');
-    let currentLang = 'fr';
+    let currentLang = localStorage.getItem('language') || 'fr';
     let isTyping = false;
 
     function updateLanguage() {
@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     languageToggle.addEventListener('click', () => {
         if (!isTyping) {
             currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('language', currentLang);
             updateLanguage();
             updateTypingText();
             if (typeof updateOrbitCenter === 'function' && typeof orbitIndex !== 'undefined') {
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     updateLanguage();
+    languageToggle.textContent = currentLang === 'fr' ? 'EN' : 'FR';
     updateTypingText();
     // ---------------------
 
@@ -318,6 +320,38 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
     modalBody.addEventListener('scroll', updateScrollFade, { passive: true });
     window.addEventListener('resize', () => { if (!modal.hidden) updateScrollFade(); });
+    // ---------------------
+
+
+    // --------------------- Lightbox pour zoom d'image
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const zoomableImages = document.querySelectorAll('.zoomable-image');
+
+    function openLightbox(imageSrc) {
+        lightboxImage.src = imageSrc;
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.hidden = true;
+        lightboxImage.src = '';
+        document.body.style.overflow = '';
+    }
+
+    zoomableImages.forEach(img => {
+        img.addEventListener('click', () => {
+            if (img.src) {
+                openLightbox(img.src);
+            }
+        });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !lightbox.hidden) closeLightbox(); });
     // ---------------------
 
 
