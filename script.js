@@ -349,11 +349,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
     // ---------------------
 
-        // Observer toutes les sections
-        sections.forEach(section => {
-            sectionObserver.observe(section);
-        });
-    // ---------------------(FIN)
 
     // --------------------- Compétences phares (menu circulaire)
     const orbitItems = document.querySelectorAll('.orbit-item');
