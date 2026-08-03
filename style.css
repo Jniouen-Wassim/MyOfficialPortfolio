@@ -7,7 +7,7 @@
    TOKENS
 ==============================================================================*/
 :root {
-    --bg: #0d0b10;
+    --bg: rgb(13, 11, 16);
     --bg-soft: #16121a;
     --surface: rgba(240, 236, 238, 0.04);
     --surface-hover: rgba(240, 236, 238, 0.07);
@@ -67,6 +67,7 @@ a { color: inherit; text-decoration: none; }
     outline-offset: 3px;
     border-radius: 4px;
 }
+
 
 /*==============================================================================
    STARFIELD — un seul calque, discret, fixe derrière tout le site
@@ -135,6 +136,23 @@ main, .footer, .side-nav, .language-toggle { position: relative; z-index: 2; }
 @keyframes glowIdle {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.08); }
+}
+
+/*==============================================================================
+   inTheLead ( LOGO WJ + Toggle Langue + Back to portfolio ) — En tête de page pour masquer le fond 
+==============================================================================*/
+
+.inTheLead {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: rgba(13, 11, 16, 0.3); /* noir transparent */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1000;
+    pointer-events: none;
 }
 
 /*==============================================================================
