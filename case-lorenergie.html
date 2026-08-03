@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorenergie — Étude de cas · Wassim Jniouen</title>
+    <meta name="description" content="Étude de cas : refonte UX/UI du site Lorenergie, entreprise de certification énergétique.">
+    <link rel="shortcut icon" href="./assets/img/Plan de travail 1.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="translate-container">
+
+    <div class="starfield" aria-hidden="true"></div>
+    <canvas class="particle-wave" id="particleWave" aria-hidden="true"></canvas>
+
+    <button id="languageToggle" class="language-toggle" data-fr="EN" data-en="FR" aria-label="Changer de langue"></button>
+    <a href="index.html#sectionProjects" class="case-back">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        <span data-fr="Retour au portfolio" data-en="Back to portfolio"></span>
+    </a>
+
+    <main class="case-main">
+        <div class="case-hero" data-reveal>
+            <p class="eyebrow"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span data-fr="// Étude de cas" data-en="// Case study"></span></p>
+            <h1 class="case-title">Lorenergie</h1>
+            <p class="case-subtitle"
+               data-fr="Moderniser l'image d'une entreprise de certification énergétique et livrer une maquette prête à être intégrée par un développeur."
+               data-en="Modernizing the image of an energy certification company and delivering a mockup ready for a developer to build."
+            ></p>
+
+            <div class="case-image-frame">
+                <img src="./assets/images/lorenergie/lorenergie.png" alt="Lorenergie">
+            </div>
+
+            <div class="case-meta-row">
+                <div class="case-meta">
+                    <span class="case-meta-label" data-fr="Rôle" data-en="Role"></span>
+                    <span class="case-meta-value" data-fr="Design UX/UI" data-en="UX/UI Design"></span>
+                </div>
+                <div class="case-meta">
+                    <span class="case-meta-label" data-fr="Durée" data-en="Duration"></span>
+                    <span class="case-meta-value" data-fr="Stage · 3 mois" data-en="Internship · 3 months"></span>
+                </div>
+                <div class="case-meta">
+                    <span class="case-meta-label">Stack</span>
+                    <span class="case-meta-value" data-fr="Figma · Design hand-off" data-en="Figma · Design hand-off"></span>
+                </div>
+            </div>
+
+            <div class="case-hero-actions">
+                <a href="https://www.lorenergie.be/" target="_blank" rel="noopener" class="btn btn-primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    <span data-fr="Voir le site" data-en="View site"></span>
+                </a>
+            </div>
+
+            <div class="case-hero-note">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                <span data-fr="La maquette a été entièrement conçue par mes soins, puis intégrée par un développeur. Le site actuellement en ligne correspond à cette refonte." data-en="The mockup was entirely designed by me, then built by a developer. The site currently live reflects this redesign."></span>
+            </div>
+        </div>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">01 — <span data-fr="Contexte" data-en="Context"></span></span>
+            <h2 data-fr="Un site vieillissant à remettre à niveau" data-en="An aging site in need of an upgrade"></h2>
+            <p data-fr="Lorenergie est une entreprise spécialisée dans la certification énergétique (PEB) de biens immobiliers. Son site web existant commençait à dater : identité visuelle peu cohérente, expérience utilisateur perfectible, et une structure technique qui compliquait le travail des développeurs à chaque évolution."
+               data-en="Lorenergie is a company specialized in energy performance certification (PEB) for real estate. Its existing website was starting to show its age: an inconsistent visual identity, a mediocre user experience, and a technical structure that made every developer update harder than it needed to be."
+            ></p>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">02 — <span data-fr="Problématique" data-en="Problem"></span></span>
+            <h2 data-fr="Ce qui n'allait plus" data-en="What no longer worked"></h2>
+            <ul>
+                <li data-fr="Un site vieillissant, qui ne reflétait plus le sérieux de l'entreprise." data-en="An aging site that no longer reflected the company's professionalism."></li>
+                <li data-fr="Une identité visuelle peu cohérente d'une page à l'autre." data-en="A visual identity that lacked consistency from one page to another."></li>
+                <li data-fr="Une expérience utilisateur qui n'était pas optimale, en particulier dans les parcours de demande de devis." data-en="A user experience that wasn't optimal, particularly in the quote request journeys."></li>
+                <li data-fr="Certaines pages mal adaptées au mobile." data-en="Several pages poorly adapted to mobile."></li>
+                <li data-fr="Une structure de site qui compliquait l'intégration côté développement." data-en="A site structure that made development integration more difficult than necessary."></li>
+            </ul>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">03 — <span data-fr="Objectifs" data-en="Objectives"></span></span>
+            <h2 data-fr="Ce que la refonte devait apporter" data-en="What the redesign needed to deliver"></h2>
+            <div class="case-grid">
+                <div class="case-card">
+                    <h3 data-fr="Moderniser l'image" data-en="Modernize the image"></h3>
+                    <p data-fr="Donner à Lorenergie une image à la hauteur de son expertise." data-en="Give Lorenergie an image that matches its expertise."></p>
+                </div>
+                <div class="case-card">
+                    <h3 data-fr="Harmoniser le design" data-en="Harmonize the design"></h3>
+                    <p data-fr="Une identité visuelle cohérente sur toutes les pages." data-en="A consistent visual identity across every page."></p>
+                </div>
+                <div class="case-card">
+                    <h3 data-fr="Améliorer l'expérience" data-en="Improve the experience"></h3>
+                    <p data-fr="Un parcours plus clair, y compris sur mobile." data-en="A clearer journey, including on mobile."></p>
+                </div>
+                <div class="case-card">
+                    <h3 data-fr="Faciliter l'intégration" data-en="Ease integration"></h3>
+                    <p data-fr="Une maquette claire, pensée pour le développeur." data-en="A clear mockup, designed with the developer in mind."></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">04 — <span data-fr="Démarche UX/UI" data-en="UX/UI process"></span></span>
+            <h2 data-fr="De l'audit à la passation" data-en="From audit to hand-off"></h2>
+            <p data-fr="J'ai commencé par un audit du site existant, afin d'identifier précisément les points de friction : pages non adaptées au mobile, parcours peu clairs, structure freinant le développement. Sur cette base, j'ai retravaillé les user flows et l'arborescence pour le secteur de l'énergie, avant de concevoir des maquettes UI cohérentes."
+               data-en="I started with an audit of the existing site, to pinpoint exactly where the friction was: pages not adapted to mobile, unclear journeys, a structure that slowed down development. From there, I reworked the user flows and sitemap for the energy sector, before designing consistent UI mockups."
+            ></p>
+            <ul>
+                <li data-fr="Audit du site existant et identification des points de friction" data-en="Audit of the existing site and identification of friction points"></li>
+                <li data-fr="User flows et arborescence repensés pour le secteur de l'énergie" data-en="User flows and sitemap reworked for the energy sector"></li>
+                <li data-fr="Maquettes UI cohérentes, desktop &amp; mobile" data-en="Consistent UI mockups, desktop &amp; mobile"></li>
+                <li data-fr="Tests d'utilisabilité pour optimiser les formulaires complexes (devis, simulation PEB)" data-en="Usability testing to optimize complex forms (quotes, PEB simulation)"></li>
+                <li data-fr="Design hand-off soigné auprès de l'équipe de développement" data-en="Careful design hand-off to the development team"></li>
+            </ul>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">05 — <span data-fr="Résultat" data-en="Result"></span></span>
+            <h2 data-fr="Une refonte fidèlement mise en ligne" data-en="A redesign faithfully brought to life"></h2>
+            <p data-fr="La maquette a été transmise à un développeur qui en a assuré l'intégration technique. Le site actuellement en ligne correspond à cette refonte : identité harmonisée, parcours plus lisible et bonne adaptation mobile."
+               data-en="The mockup was handed off to a developer who handled the technical build. The site currently live reflects this redesign: a harmonized identity, a clearer journey and solid mobile adaptation."
+            ></p>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">06 — <span data-fr="Compétences &amp; outils" data-en="Skills &amp; tools"></span></span>
+            <h2 data-fr="Ce que ce projet a mobilisé" data-en="What this project called on"></h2>
+            <div class="case-tags">
+                <span class="case-tag" data-fr="Audit UX" data-en="UX audit"></span>
+                <span class="case-tag" data-fr="User flows" data-en="User flows"></span>
+                <span class="case-tag" data-fr="UI design" data-en="UI design"></span>
+                <span class="case-tag" data-fr="Tests d'utilisabilité" data-en="Usability testing"></span>
+                <span class="case-tag" data-fr="Design hand-off" data-en="Design hand-off"></span>
+                <span class="case-tag">Figma</span>
+            </div>
+        </section>
+
+        <div class="case-footer">
+            <a href="index.html#sectionProjects" class="btn btn-ghost">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                <span data-fr="Retour aux projets" data-en="Back to projects"></span>
+            </a>
+            <a href="case-rebelcompany.html" class="btn btn-ghost">
+                <span data-fr="Étude de cas suivante" data-en="Next case study"></span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </main>
+
+    <script src="case-study.js"></script>
+</body>
+</html>

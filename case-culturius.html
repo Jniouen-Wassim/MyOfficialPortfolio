@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culturius — Étude de cas · Wassim Jniouen</title>
+    <meta name="description" content="Étude de cas : conception et intégration du site Culturius, plateforme de découverte d'événements locaux.">
+    <link rel="shortcut icon" href="./assets/img/Plan de travail 1.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="translate-container">
+
+    <div class="starfield" aria-hidden="true"></div>
+    <canvas class="particle-wave" id="particleWave" aria-hidden="true"></canvas>
+
+    <button id="languageToggle" class="language-toggle" data-fr="EN" data-en="FR" aria-label="Changer de langue"></button>
+    <a href="index.html#sectionProjects" class="case-back">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        <span data-fr="Retour au portfolio" data-en="Back to portfolio"></span>
+    </a>
+
+    <main class="case-main">
+        <div class="case-hero" data-reveal>
+            <p class="eyebrow"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span data-fr="// Étude de cas" data-en="// Case study"></span></p>
+            <h1 class="case-title">Culturius</h1>
+            <p class="case-subtitle"
+               data-fr="Intégration front-end du site Culturius. Le site était en développement depuis 2 ans, j'ai contribué à mettre la maquette du designer dans le front-end."
+               data-en="Front-end integration of the Culturius website. The site had been in development for 2 years, I contributed to implementing the designer's mockup in the front-end."
+            ></p>
+
+            <div class="case-image-frame">
+                <img src="./assets/images/culturius/Culturius-stage.png" alt="Culturius">
+            </div>
+
+            <div class="case-meta-row">
+                <div class="case-meta">
+                    <span class="case-meta-label" data-fr="Rôle" data-en="Role"></span>
+                    <span class="case-meta-value" data-fr="Intégration front-end" data-en="Front-end integration"></span>
+                </div>
+                <div class="case-meta">
+                    <span class="case-meta-label" data-fr="Durée" data-en="Duration"></span>
+                    <span class="case-meta-value" data-fr="Stage · 3 mois" data-en="Internship · 3 months"></span>
+                </div>
+                <div class="case-meta">
+                    <span class="case-meta-label">Stack</span>
+                    <span class="case-meta-value">Next.js · Sass</span>
+                </div>
+            </div>
+
+            <div class="case-hero-actions">
+                <a href="https://culturius.com/fr?country=be" target="_blank" rel="noopener" class="btn btn-primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    <span data-fr="Voir le site" data-en="View site"></span>
+                </a>
+            </div>
+        </div>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">01 — <span data-fr="Contexte" data-en="Context"></span></span>
+            <h2 data-fr="Une startup, un site à construire" data-en="A startup, a website to build"></h2>
+            <p data-fr="Culturius est une jeune startup dont l'ambition est d'aider les habitants d'une ville à découvrir plus facilement les événements culturels et locaux autour d'eux : expositions, concerts, marchés, festivals. Au moment de mon stage, l'entreprise n'avait pas encore de site web : tout restait à construire."
+               data-en="Culturius is a young startup whose ambition is to help people discover the cultural and local events happening around them: exhibitions, concerts, markets, festivals. When I joined for my internship, the company had no website yet: everything had to be built from scratch."
+            ></p>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">02 — <span data-fr="Objectifs" data-en="Objectives"></span></span>
+            <h2 data-fr="Ce que le site devait accomplir" data-en="What the site needed to achieve"></h2>
+            <ul>
+                <li data-fr="Présenter clairement la proposition de valeur de Culturius dès la page d'accueil." data-en="Clearly present Culturius's value proposition right from the homepage."></li>
+                <li data-fr="Permettre de parcourir et filtrer facilement les événements par ville, catégorie et date." data-en="Make it easy to browse and filter events by city, category and date."></li>
+                <li data-fr="Poser une base visuelle et technique solide, propre à évoluer avec le produit." data-en="Establish a solid visual and technical foundation, built to evolve with the product."></li>
+            </ul>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">03 — <span data-fr="Démarche" data-en="Process"></span></span>
+            <h2 data-fr="Du cadrage à la mise en ligne" data-en="From scoping to launch"></h2>
+            <p data-fr="J'ai pris en charge l'ensemble du projet : cadrage des besoins avec l'équipe, architecture de l'information, wireframes, puis maquettes UI complètes sur Figma pour desktop et mobile. Une fois les maquettes validées, j'ai assuré moi-même l'intégration front-end du site en Next.js et Sass, du prototype jusqu'à la mise en ligne."
+               data-en="I took the project on end to end: scoping requirements with the team, information architecture, wireframes, then full UI mockups in Figma for desktop and mobile. Once the mockups were validated, I handled the front-end build myself in Next.js and Sass, from prototype to launch."
+            ></p>
+            <ul>
+                <li data-fr="Cadrage des besoins et de l'architecture de l'information" data-en="Scoping requirements and information architecture"></li>
+                <li data-fr="Wireframes puis maquettes UI sur Figma (desktop &amp; mobile)" data-en="Wireframes, then UI mockups in Figma (desktop &amp; mobile)"></li>
+                <li data-fr="Intégration front-end en Next.js et Sass" data-en="Front-end build in Next.js and Sass"></li>
+            </ul>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">04 — <span data-fr="Résultat" data-en="Result"></span></span>
+            <h2 data-fr="Un site en ligne, du design au code" data-en="A live site, from design to code"></h2>
+            <p data-fr="Le site est aujourd'hui en ligne et correspond fidèlement au travail de conception mené en amont. Ce projet a été une belle occasion de porter une réflexion UX/UI jusqu'à sa mise en œuvre technique complète, sans intermédiaire."
+               data-en="The site is now live and closely reflects the design work carried out beforehand. This project was a great opportunity to carry a UX/UI vision all the way through to full technical implementation, without a hand-off in between."
+            ></p>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">05 — <span data-fr="Compétences &amp; outils" data-en="Skills &amp; tools"></span></span>
+            <h2 data-fr="Ce que ce projet a mobilisé" data-en="What this project called on"></h2>
+            <div class="case-tags">
+                <span class="case-tag" data-fr="Architecture de l'information" data-en="Information architecture"></span>
+                <span class="case-tag" data-fr="UI design" data-en="UI design"></span>
+                <span class="case-tag" data-fr="Design responsive" data-en="Responsive design"></span>
+                <span class="case-tag" data-fr="Intégration front-end" data-en="Front-end integration"></span>
+                <span class="case-tag">Figma</span>
+                <span class="case-tag">Next.js</span>
+                <span class="case-tag">Sass</span>
+            </div>
+        </section>
+
+        <div class="case-footer">
+            <a href="index.html#sectionProjects" class="btn btn-ghost">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                <span data-fr="Retour aux projets" data-en="Back to projects"></span>
+            </a>
+            <a href="case-lorenergie.html" class="btn btn-ghost">
+                <span data-fr="Étude de cas suivante" data-en="Next case study"></span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </main>
+
+    <script src="case-study.js"></script>
+</body>
+</html>

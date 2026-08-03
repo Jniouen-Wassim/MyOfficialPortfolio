@@ -20,496 +20,449 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Wassim Jniouen</title>
-    <meta name="description" content="Portfolio de Wassim Jniouen, UX/UI Designer">
-    <meta name="author" content="Wassim Jniouen">
-    <link rel="shortcut icon" href="./assets/images/galaxy.webp">
-    <!-- Mon CSS -->
+    <title>Wassim Jniouen - Designer UX/UI &amp; Web Designer</title>
+    <meta name="description" content="Portfolio de Wassim Jniouen, Designer UX/UI basé à Bruxelles, à l'aise en intégration front-end.">
+    <link rel="shortcut icon" href="./assets/img/Plan de travail 1.png">
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous">
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" crossorigin="anonymous">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2YNLS9NX2"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body class="translate-container">
-    <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNGZFNJF"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Fond spatial discret, un seul calque pour toute la page -->
+    <div class="starfield" aria-hidden="true"></div>
+    <canvas class="particle-wave" id="particleWave" aria-hidden="true"></canvas>
 
-    <!-- S0 - Langue francaise / Anglais -->
-    <button id="languageToggle" class="language-toggle"
-        data-fr="FR" 
-        data-en="EN"
-    ></button>
-    
-    <!-- S0bis - Navigation -->
-    <nav class="side-nav">
-        <a href="#sectionHome" class="nav-item active" title="Page d'accueil" data-section="1">
-            <i class="fas fa-rocket"></i>
+    <!-- Sélecteur de langue -->
+    <button id="languageToggle" class="language-toggle" data-fr="EN" data-en="FR" aria-label="Changer de langue"></button>
+
+    <!-- Navigation : ligne de trajectoire avec points-repères -->
+    <nav class="side-nav" aria-label="Navigation principale">
+        <div class="nav-track"><div class="nav-progress" id="navProgress"></div></div>
+        <a href="#sectionHome" class="nav-item active" data-index="01">
+            <i class="fa-solid fa-house nav-icon" aria-hidden="true"></i>
+            <span class="nav-tooltip">
+                <i class="fa-solid fa-house" aria-hidden="true"></i>
+                <span data-fr="Accueil" data-en="Home"></span>
+            </span>
         </a>
-        <a href="#sectionAbout" class="nav-item" title="En savoir plus sur moi" data-section="2">
-            <i class="fas fa-user-astronaut"></i>
+        <a href="#sectionAbout" class="nav-item" data-index="02">
+            <i class="fa-solid fa-user-astronaut nav-icon" aria-hidden="true"></i>
+            <span class="nav-tooltip">
+                <i class="fa-solid fa-user-astronaut" aria-hidden="true"></i>
+                <span data-fr="À propos" data-en="About"></span>
+            </span>
         </a>
-        <a href="#sectionCv" class="nav-item" title="Mon CV" data-section="3">
-            <i class="fas fa-file-alt"></i>
+        <a href="#sectionExperience" class="nav-item" data-index="03">
+            <i class="fa-solid fa-route nav-icon" aria-hidden="true"></i>
+            <span class="nav-tooltip">
+                <i class="fa-solid fa-route" aria-hidden="true"></i>
+                <span data-fr="Parcours" data-en="Journey"></span>
+            </span>
         </a>
-        <a href="#sectionProjects" class="nav-item" title="Mes projets" data-section="4">
-            <i class="fas fa-satellite"></i>
+        <a href="#sectionProjects" class="nav-item" data-index="04">
+            <i class="fa-solid fa-diagram-project nav-icon" aria-hidden="true"></i>
+            <span class="nav-tooltip">
+                <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+                <span data-fr="Projets" data-en="Projects"></span>
+            </span>
+        </a>
+        <a href="#sectionContact" class="nav-item" data-index="05">
+            <i class="fa-solid fa-envelope nav-icon" aria-hidden="true"></i>
+            <span class="nav-tooltip">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <span data-fr="Contact" data-en="Contact"></span>
+            </span>
         </a>
     </nav>
     
     <main>
-        
-        <!-- S1 - Home -->
-        <section id="sectionHome" class="section">           
-            <h1 id="typing-text" class="h1-title" 
-                data-fr="DESIGNER UX-UI" 
-                data-en="UX-UI DESIGNER"
-            ></h1>
-
-            <div class="social-links">
-                <a href="mailto:jniouenwassim@hotmail.com" target="_blank" title="Envoyer un email"><i class="fa-solid fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/wassim-jniouen-953b651b9/" target="_blank" title="Suivre mon compte LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com/Jniouen-Wassim" target="_blank" title="Suivre mon compte GitHub"><i class="fab fa-github"></i></a>
+        <!-- 01 - Accueil -->
+        <section id="sectionHome" class="section section-home">
+            <div class="hero-orbs" aria-hidden="true">
+                <span class="orb orb-1"></span>
+                <span class="orb orb-2"></span>
+                <span class="orb orb-3"></span>
             </div>
-            <!-- SVG wave : 1 -->
-            <div class="container-customSvgWave-sectionHome">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
-                </svg>
+            <div class="hero">
+                <p class="eyebrow" data-fr="// Bruxelles, Belgique" data-en="// Brussels, Belgium"></p>
+                <p class="hero-greeting" data-fr="Bonjour, je suis" data-en="Hello, I am"></p>
+                <h1 id="typing-text" class="hero-name" data-fr="Wassim Jniouen" data-en="Wassim Jniouen"></h1>
+                <h2 class="hero-role" data-fr="Designer UX/UI &amp; Web Designer" data-en="UX/UI Designer &amp; Web Designer"></h2>
+                <p class="hero-desc"
+                    data-fr="Diplômé avec distinction d'un Bachelor en création digitale, je conçois des parcours utilisateurs sur Figma et je maîtrise l'intégration front-end pour <span class='highlight'>dialoguer efficacement avec les développeurs</span> et livrer des maquettes pensées pour être codées."
+                    data-en="Graduated with distinction in Digital Creation, I design user journeys in Figma and I'm fluent in front-end integration to <span class='highlight'>communicate effectively with developers</span> and deliver mockups built to be coded."
+                ></p>
+                <div class="availability">
+                    <span class="pulse-dot" aria-hidden="true"></span>
+                    <span data-fr="Recherche un poste de Designer UX/UI en CDI à Bruxelles" data-en="Looking for a full-time UX/UI Designer role in Brussels"></span>
+                </div>
+                <div class="hero-actions">
+                    <a href="#sectionProjects" class="btn btn-primary" data-fr="Voir mes projets" data-en="View my work"></a>
+                    <a href="#sectionContact" class="btn btn-ghost" data-fr="Me contacter" data-en="Get in touch"></a>
+                </div>
+            </div>
+            <div class="social-rail" id="socialRail">
+                <a href="mailto:jniouenwassim@hotmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/wassim-jniouen-953b651b9/" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/Jniouen-Wassim" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <span class="social-line" aria-hidden="true"></span>
+            </div>
+            <a href="#sectionAbout" class="scroll-hint" aria-label="Défiler vers la section suivante">
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </a>
+        </section>
+
+        <!-- 02 - À propos -->
+        <section id="sectionAbout" class="section">
+            <div class="content">
+                <div class="section-head" data-index="01">
+                    <span class="head-glow head-glow-mauve" aria-hidden="true"></span>
+                    <span class="head-glow head-glow-green" aria-hidden="true"></span>
+                    <p class="eyebrow"><i class="fa-solid fa-user-astronaut" aria-hidden="true"></i><span data-fr="// 01 - À propos" data-en="// 01 - About"></span></p>
+                    <h2 class="section-title" data-fr="Un design pensé pour être développé" data-en="Design built to be developed"></h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text" data-reveal>
+                        <p data-fr="Mon métier, c'est le <strong>design UX/UI</strong> : je conçois des parcours utilisateurs fluides sur <strong>Figma</strong> et je les transforme en prototypes interactifs haute fidélité. Deux stages en entreprise m'ont aussi donné une vraie aisance en <strong>intégration front-end</strong>, non pas pour devenir développeur, mais pour livrer des maquettes réalistes et dialoguer efficacement avec les équipes de développement."
+                           data-en="My craft is <strong>UX/UI design</strong>: I design smooth user journeys in <strong>Figma</strong> and turn them into high-fidelity interactive prototypes. Two company internships also gave me real fluency in <strong>front-end integration</strong>, not to become a developer, but to deliver realistic mockups and communicate effectively with development teams."
+                        ></p>
+                        <p data-fr="Diplômé avec distinction d'un <strong>Bachelier en création digitale</strong> à l'ISFSC, je suis un collaborateur polyvalent et rigoureux, à l'aise dans la communication inter-métiers avec designers, développeurs et clients."
+                           data-en="Graduated with distinction from a <strong>Bachelor in Digital Creation</strong> at ISFSC, I'm a versatile, detail-oriented collaborator, comfortable bridging conversations between designers, developers and clients."
+                        ></p>
+                        <p data-fr="Je recherche aujourd'hui un <strong>poste de Designer UX/UI en CDI à Bruxelles</strong>, et reste également réceptif à d'autres opportunités digitales si une formation est prévue."
+                           data-en="I'm currently looking for a <strong>full-time UX/UI Designer role in Brussels</strong>, and remain open to other digital opportunities where training is provided."
+                        ></p>
+                    </div>
+
+                    <div class="stats-panel" data-reveal>
+                        <div class="stat-row">
+                            <span class="stat-number">7</span>
+                            <span class="stat-label" data-fr="Projets réalisés" data-en="Projects delivered"></span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label" data-fr="Stages en entreprise" data-en="Company internships"></span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-number">12+</span>
+                            <span class="stat-label" data-fr="Technologies maîtrisées" data-en="Technologies mastered"></span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-number">FR·EN</span>
+                            <span class="stat-label" data-fr="Français (C1) · Anglais (B2)" data-en="French (C1) · English (B2)"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-skills" data-reveal>
+                    <p class="featured-skills-label" data-fr="Compétences phares" data-en="Featured skills"></p>
+                    <div class="orbit-menu" id="orbitMenu">
+                        <div class="orbit-center">
+                            <span class="orbit-center-icon" id="orbitIcon"><i class="fa-brands fa-figma" aria-hidden="true"></i></span>
+                            <span class="orbit-center-text" id="orbitText">Figma</span>
+                        </div>
+                        <button type="button" class="orbit-item" style="--i:0" data-icon="fa-brands fa-figma" data-text-fr="Figma" data-text-en="Figma" aria-label="Figma"><i class="fa-brands fa-figma" aria-hidden="true"></i></button>
+                        <button type="button" class="orbit-item" style="--i:1" data-icon="fa-solid fa-layer-group" data-text-fr="Octopus - Parcours utilisateur" data-text-en="Octopus - User flows" aria-label="Octopus"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></button>
+                        <button type="button" class="orbit-item" style="--i:2" data-icon="fa-solid fa-diagram-project" data-text-fr="Miro - Brainstorming" data-text-en="Miro - Brainstorming" aria-label="Miro"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></button>
+                        <button type="button" class="orbit-item" style="--i:3" data-icon="fa-solid fa-vial" data-text-fr="Useberry - Tests utilisateurs" data-text-en="Useberry - User testing" aria-label="Useberry"><i class="fa-solid fa-vial" aria-hidden="true"></i></button>
+                        <button type="button" class="orbit-item" style="--i:4" data-text-fr="Next.js" data-text-en="Next.js" aria-label="Next.js"><svg class="icon-nextjs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.3" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 7.5v9M8 7.5l8.2 9.4M15.3 7.5v5.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <button type="button" class="orbit-item" style="--i:5" data-icon="fa-solid fa-wand-magic-sparkles" data-text-fr="IA" data-text-en="AI" aria-label="IA"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+
+                <div class="skills-showcase" data-reveal>
+                    <div class="skill-card skill-card-design">
+                        <div class="skill-card-head">
+                            <span class="skill-card-icon"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i></span>
+                            <h3 data-fr="Design &amp; Prototypage" data-en="Design &amp; Prototyping"></h3>
+                        </div>
+                        <div class="skill-tiles">
+                            <div class="skill-tile"><i class="fa-brands fa-figma"></i><span>Figma</span></div>
+                            <div class="skill-tile"><i class="fa-solid fa-diagram-project"></i><span>Miro</span></div>
+                            <div class="skill-tile"><i class="fa-solid fa-layer-group"></i><span>Octopus</span></div>
+                            <div class="skill-tile"><i class="fa-solid fa-pen-nib"></i><span>Illustrator&nbsp;(TOSA)</span></div>
+                            <div class="skill-tile"><i class="fa-solid fa-clapperboard"></i><span>After&nbsp;Effects</span></div>
+                            <div class="skill-tile"><i class="fa-solid fa-vial"></i><span>Useberry</span></div>
+                            <div class="skill-tile"><i class="fa-solid fa-wand-magic-sparkles"></i><span>IA</span></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card skill-card-dev">
+                        <div class="skill-card-head">
+                            <span class="skill-card-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></span>
+                            <div>
+                                <h3 data-fr="Intégration &amp; Front-end" data-en="Front-end &amp; Integration"></h3>
+                                <p class="skill-card-sub" data-fr="Pour dialoguer avec les développeurs" data-en="To collaborate with developers"></p>
+                            </div>
+                        </div>
+                        <div class="skill-tiles">
+                            <div class="skill-tile"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+                            <div class="skill-tile"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+                            <div class="skill-tile"><i class="fa-brands fa-sass"></i><span>SASS</span></div>
+                            <div class="skill-tile"><img src="./assets/images/tailwind-icon.svg" alt="Tailwind CSS" class="skill-icon-tailwind"><span>Tailwind CSS</span></div>
+                            <div class="skill-tile"><i class="fa-brands fa-bootstrap"></i><span>Bootstrap</span></div>
+                            <div class="skill-tile"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                            <div class="skill-tile"><svg class="icon-nextjs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.3" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 7.5v9M8 7.5l8.2 9.4M15.3 7.5v5.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Next.js</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-group skill-group-tools">
+                    <h3 class="skill-group-title" data-fr="Outils &amp; Collaboration" data-en="Tools &amp; Collaboration"></h3>
+                    <div class="skill-pills">
+                        <span class="pill"><i class="fa-brands fa-git-alt"></i>Git</span>
+                        <span class="pill"><i class="fa-brands fa-github"></i>GitHub</span>
+                        <span class="pill"><i class="fa-solid fa-arrows-spin"></i>Scrum</span>
+                        <span class="pill"><i class="fa-brands fa-trello"></i>Trello</span>
+                        <span class="pill"><i class="fa-brands fa-slack"></i>Slack</span>
+                        <span class="pill"><i class="fa-solid fa-video"></i>Meet&nbsp;/&nbsp;Zoom</span>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- 03 - Parcours (expérience + formations) -->
+        <section id="sectionExperience" class="section">
+            <div class="content">
+                <div class="section-head" data-index="02">
+                    <span class="head-glow head-glow-mauve" aria-hidden="true"></span>
+                    <span class="head-glow head-glow-green" aria-hidden="true"></span>
+                    <p class="eyebrow"><i class="fa-solid fa-route" aria-hidden="true"></i><span data-fr="// 02 - Parcours" data-en="// 02 - Journey"></span></p>
+                    <h2 class="section-title" data-fr="Expérience &amp; formations" data-en="Experience &amp; education"></h2>
+                </div>
 
-        <!-- S2 - About -->
-        <section id="sectionAbout" class="section" data-aos="fade-right" data-aos-delay="100">
-            <div class="content" data-aos="fade-right" data-aos-delay="100">
-                <div class="global-title">
-                    <h2 
-                        data-fr="Qui suis-je ?" 
-                        data-en="Who Am I ?"
-                    ></h2>
-                    <h4 data-aos="fade-right" data-aos-delay="600"></h4>
-                </div>
-                <p class="description"
-                    data-fr="Je suis un <strong>développeur front-end</strong> en reconversion vers le domaine du <strong>design UX/UI</strong>. 
-                    Cette nouvelle passion m'a permis de maîtriser des outils comme <strong>Figma</strong> pour créer des maquettes et les transformer en prototypes interactifs, aboutissant à la création de <strong>sites web fonctionnels</strong>. 
-                    Mon rôle combine <strong>créativité</strong> et <strong>technicité</strong>, me permettant de collaborer efficacement avec des clients, designers et développeurs au sein d'une <strong>entreprise</strong> ou d'une <strong>start-up</strong>.
-                    <br><br>
-                    Après une formation de 7 mois chez <strong>BeCode</strong> et des stages chez <strong>Wazo</strong> et <strong>Culturius</strong>, je suis actuellement <strong>étudiant à l'ISFSC</strong>.
-                    Ces expériences m'ont permis de développer mes compétences en <strong>programmation</strong>, <strong>design</strong> et <strong>travail en équipe</strong> à travers divers projets réalisés en collaboration.
-                    Je suis actuellement à la recherche d'un <strong>stage</strong> à <strong>Bruxelles</strong>, en présentiel ou à distance. N'hésitez pas à me contacter par <strong>email</strong> ou sur <strong>LinkedIn</strong>."
-                    
-                    data-en="I am a <strong>front-end developer</strong> transitioning into the field of <strong>UX/UI design</strong>. 
-                    This new passion has enabled me to master tools like <strong>Figma</strong> to create mockups and turn them into interactive prototypes, ultimately leading to the creation of <strong>functional websites</strong>. 
-                    My role combines <strong>creativity</strong> and <strong>technical skills</strong>, allowing me to collaborate effectively with clients, designers, and developers within a <strong>company</strong> or <strong>startup</strong>.
-                    <br><br>
-                    After a 7-month training program at <strong>BeCode</strong> and internships at <strong>Wazo</strong> and <strong>Culturius</strong>, I am currently a <strong>student at ISFSC</strong>. 
-                    These experiences have allowed me to develop my skills in <strong>coding</strong>, <strong>design</strong>, and <strong>teamwork</strong> through various collaborative projects.
-                    I am currently looking for an <strong>internship</strong> in <strong>Brussels</strong>, either on-site or remote. Feel free to contact me via <strong>email</strong> or <strong>LinkedIn</strong>."
-                ></p>
-                <h3 class="h3-skills"
-                    data-fr="Mes compétences"
-                    data-en="My skills"
-                ></h3>
-                <div class="skills">
-                    <div class="skill">
-                        <i class="fab fa-figma"></i>
-                        <span>Figma</span>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-pen-nib"></i>
-                        <span>Illustrator (Tosa)</span>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-image"></i>
-                        <span>Photoshop</span>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-react"></i>
-                        <span>Next.js</span>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-html5"></i>
-                        <span>HTML</span>
-                    </div>
-                    <div class="skill">
-                        <i class="fa-brands fa-css3-alt"></i>
-                        <span>CSS</span>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-js"></i>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="skill">
-                        <i class="fa-brands fa-php"></i>
-                        <span>PHP</span>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-wordpress"></i>
-                        <span>WordPress</span>
-                    </div>
-                    <div class="skill">
-                        <i class="fa-brands fa-sass"></i>
-                        <span>SASS</span>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-bootstrap"></i>
-                        <span>Bootstrap</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./assets/images/tailwind-css.svg" alt="Tailwind CSS" width="40" height="40">
-                        <span>Tailwind</span>
-                    </div>
-                </div>
-                <!-- menu circulaire de competences -->
-                <div class="menu-container">
-                    <div class="center-shape">
-                        <div class="blob-container">
-                            <svg viewBox="0 0 200 200" class="blob">
-                                <path d="M47.5,-51.1C59.8,-37.9,67.2,-19,64.9,-2.3C62.6,14.4,50.6,28.8,38.3,40.9C26,53,13,62.8,-2.4,65.2C-17.8,67.6,-35.6,62.6,-48.1,50.6C-60.6,38.6,-67.8,19.3,-65.8,1.9C-63.9,-15.4,-52.8,-30.8,-40.1,-44C-27.3,-57.2,-13.7,-68.2,2.7,-71.1C19,-74,35.3,-64.3,47.5,-51.1Z" transform="translate(100 100)" />
-                            </svg>
-                        </div>
-                        <div class="center-content">
-                            <i class="center-icon fa-solid fa-mobile-screen-button"></i>
+                <div class="timeline">
+                    <h3 class="timeline-subhead" data-fr="Expérience professionnelle" data-en="Professional experience"></h3>
+
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-date" data-fr="Jan. 2026 - Mar. 2026" data-en="Jan. 2026 - Mar. 2026"></div>
+                        <div class="timeline-body">
+                            <h4>Designer UX/UI <span class="timeline-company">- RebelCompany</span></h4>
+                            <p class="timeline-meta" data-fr="Bruxelles · Stage · Création de sites sur-mesure" data-en="Brussels · Internship · Bespoke website creation"></p>
+                            <ul>
+                                <li data-fr="Pilotage de la refonte d'identité visuelle pour attirer et convertir plus de prospects." data-en="Led a visual identity redesign to attract and convert more prospects."></li>
+                                <li data-fr="Architecture de l'information, wireframes et prototypes haute fidélité (desktop &amp; mobile)." data-en="Information architecture, wireframes and high-fidelity prototypes (desktop &amp; mobile)."></li>
+                                <li data-fr="Collaboration au sein d'une équipe pluridisciplinaire en méthodologie Scrum." data-en="Collaborated within a multidisciplinary team using Scrum methodology."></li>
+                            </ul>
+                            <span class="timeline-status" data-fr="Design finalisé, intégration en attente" data-en="Design finalized, integration pending"></span>
                         </div>
                     </div>
-                    
-                    <!-- Ligne circulaire reliant les boutons du menu -->
-                    <svg class="connection-lines" viewBox="0 0 500 500">
-                        <circle class="connection-circle-bg" cx="250" cy="250" r="200" />
-                    </svg>
-                    
-                    <!-- Boutons du menu  -->
-                    <div class="menu-items">
 
-                        <div class="center-text">Mobile First</div>
-                        
-                        <button class="menu-item" data-text="Mobile First" aria-label="Mobile First" data-icon="fa-mobile-screen-button">
-                            <i class="fa-solid fa-mobile-screen-button"></i>
-                        </button>
-                        <button class="menu-item" data-text="Innovation" aria-label="Innovation" data-icon="fa-lightbulb">
-                            <i class="fa-solid fa-lightbulb"></i>
-                        </button>
-                        <button class="menu-item" data-text="Prototyping" aria-label="Prototyping" data-icon="fa-layer-group">
-                            <i class="fa-solid fa-layer-group"></i>
-                        </button>
-                        <button class="menu-item" data-text="UX/UI" aria-label="UX/UI" data-icon="fa-pen-ruler">
-                            <i class="fa-solid fa-pen-ruler"></i>
-                        </button>
-                        <button class="menu-item" data-text="Re/Branding" aria-label="Re/Branding" data-icon="fa-palette">
-                            <i class="fa-solid fa-palette"></i>
-                        </button>
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-date" data-fr="Avr. 2025 - Juil. 2025" data-en="Apr. 2025 - Jul 2025"></div>
+                        <div class="timeline-body">
+                            <h4>Designer UX/UI <span class="timeline-company">- Lorenergie</span></h4>
+                            <p class="timeline-meta" data-fr="Bruxelles · Stage · Performance énergétique" data-en="Brussels · Internship · Energy performance"></p>
+                            <ul>
+                                <li data-fr="Conception des parcours utilisateurs, de l'arborescence et des maquettes UI." data-en="Designed user flows, sitemaps and UI mockups."></li>
+                                <li data-fr="Tests d'utilisabilité et analyses de friction pour optimiser des formulaires complexes." data-en="Usability testing and friction analysis to optimize complex forms."></li>
+                                <li data-fr="Suivi et passation technique (design hand-off) auprès de l'équipe front-end." data-en="Technical follow-up and design hand-off to the front-end team."></li>
+                            </ul>
+                            <span class="timeline-status" data-fr="Design finalisé, mis en ligne" data-en="Design finalized, live"></span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-date" data-fr="Sept. 2022 - Sept. 2023" data-en="Sep. 2022 - Sep. 2023"></div>
+                        <div class="timeline-body">
+                            <h4 data-fr='Agent Multimodal <span class="timeline-company">- STIB</span>' data-en='Multimodal Agent <span class="timeline-company">- STIB</span>'></h4>
+                            <p class="timeline-meta" data-fr="Bruxelles · Station Schuman, zone 9" data-en="Brussels · Schuman station, zone 9"></p>
+                            <ul>
+                                <li data-fr="Coordination des flux de voyageurs et assistance clientèle lors de sommets européens." data-en="Coordinated passenger flows and customer assistance during European summits."></li>
+                                <li data-fr="Gestion des priorités opérationnelles et résolution d'incidents en situation d'urgence." data-en="Managed operational priorities and resolved incidents in emergency situations."></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="timeline-subhead timeline-subhead-spaced" data-fr="Formations" data-en="Education"></h3>
+
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-date" data-fr="Sept. 2023 - Juin 2026" data-en="Sep. 2023 - Jun 2026"></div>
+                        <div class="timeline-body">
+                            <h4 data-fr='Bachelier en création digitale <span class="timeline-company">- ISFSC</span>' data-en='Bachelor in Digital Creation <span class="timeline-company">- ISFSC</span>'></h4>
+                            <p class="timeline-meta" data-fr="Bruxelles · Haute École · Diplômé avec distinction" data-en="Brussels · University College · Graduated with distinction"></p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-date" data-fr="Avr. 2021 - Fév. 2022" data-en="Apr. 2021 - Feb. 2022"></div>
+                        <div class="timeline-body">
+                            <h4 data-fr='Mentoring &amp; insertion professionnelle <span class="timeline-company">- Duo for a Job + Culturius</span>' data-en='Mentoring &amp; professional integration <span class="timeline-company">- Duo for a Job + Culturius</span>'></h4>
+                            <p class="timeline-meta" data-fr="Bruxelles · Stage" data-en="Brussels · Internship"></p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-date" data-fr="Oct. 2020 - Juin 2021" data-en="Oct. 2020 - Jun 2021"></div>
+                        <div class="timeline-body">
+                            <h4 data-fr='Développeur front-end <span class="timeline-company">- BeCode + Wazo SA</span>' data-en='Front-end Developer <span class="timeline-company">- BeCode + Wazo SA</span>'></h4>
+                            <p class="timeline-meta" data-fr="Bruxelles / Luxembourg · Formation diplômante + stage" data-en="Brussels / Luxembourg · Certified training + internship"></p>
+                        </div>
                     </div>
                 </div>
-        </section>
 
-        <!-- SVG wave : 2 -->
-        <div class="container-customSvgWave-sectionCv">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#F4F3F3" fill-opacity="1" d="M0,256L60,229.3C120,203,240,149,360,133.3C480,117,600,139,720,176C840,213,960,267,1080,266.7C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
-        </div>
-        <!-- S3 - CV --> 
-        <section id="sectionCv" class="section">
-            <div class="content" data-aos="fade-right" data-aos-delay="100">
-                <div class="container-title-h2">
-                    <h2
-                        data-fr="CV" 
-                        data-en="CV"
-                    ></h2>
-                    <h4 data-aos="fade-right" data-aos-delay="600"></h4>
-                </div>    
-                <p class="description" 
-                    data-fr="N'hésitez pas à télécharger mon CV pour avoir un résumé de mes compétences à portée de clic. C'est gratuit et sans engagement, promis !" 
-                    data-en="Don't hesitate to download my CV to get a brief overview of my skills. It's free and non-commital!"
-                ></p>
-                <div>
-                    <img class="img-cv" src="./assets/images/Wassim_Jniouen_Cv.webp" loading="lazy" alt="Image de mon cv">
-                </div>
-                <a href="./assets/images/Wassim_Jniouen_Cv.pdf" download class="download-cv" 
-                    data-fr="Télécharger" 
-                    data-en="Download">
+                <a href="./assets/images/CV/CV_Wassim_Jniouen_ATS.pdf" download class="btn btn-primary cv-download">
+                    <i class="fa-solid fa-arrow-down"></i>
+                    <span data-fr="Télécharger mon CV" data-en="Download my CV"></span>
                 </a>
-            </div> 
+            </div>
         </section>
 
-        <!-- SVG wave : 3 -->
-        <div class="container-customSvgWave-sectionProjects">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#F4F3F3" fill-opacity="1" d="M0,160L60,149.3C120,139,240,117,360,138.7C480,160,600,224,720,218.7C840,213,960,139,1080,138.7C1200,139,1320,213,1380,250.7L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
-            </svg>
-        </div>
-        <!-- S4 - Projets --> 
-        <section id="sectionProjects" class="section" >
-            <div class="content" data-aos="fade-right" data-aos-delay="100">
-                <div class="global-title">
-                    <h2 
-                        data-fr="Projets" 
-                        data-en="Projects"
-                    ></h2>
-                    <h4 data-aos="fade-right" data-aos-delay="600"></h4>
-                </div>   
+        <!-- 04 - Projets -->
+        <section id="sectionProjects" class="section">
+            <div class="content">
+                <div class="section-head" data-index="03">
+                    <span class="head-glow head-glow-mauve" aria-hidden="true"></span>
+                    <span class="head-glow head-glow-green" aria-hidden="true"></span>
+                    <p class="eyebrow"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span data-fr="// 03 - Projets" data-en="// 03 - Projects"></span></p>
+                    <h2 class="section-title" data-fr="Une sélection de projets" data-en="Selected work"></h2>
+                </div>
+
+                <p class="section-hint" data-fr="Clique sur un projet pour voir la démarche, les outils utilisés et les liens." data-en="Click a project to see the process, the tools used and the links."></p>
+
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all" data-fr="Tous" data-en="All"></button>
+                    <button class="filter-btn" data-filter="designer" data-fr="Designer" data-en="Designer"></button>
+                    <button class="filter-btn" data-filter="developer" data-fr="Intégration" data-en="Integration"></button>
+                </div>
+
                 <div class="projects-grid">
-                    <!-- card 1 -->
-                    <a href="https://www.lorenergie.be" target="_blank" class="project-card">
-                        <div>
-                            <div class="project-image">
-                                <img src="./assets/images/lorenergieAcceuil.webp" loading="lazy" alt="Culturius">
-                                <div class="project-overlay">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </div>
+                    <div class="project-card" tabindex="0" role="button" aria-haspopup="dialog" data-project="jouermalin" data-role="designer developer">
+                        <div class="project-image">
+                            <img src="./assets/images/jouermalin(TFE)/jouerMalin.png" alt="Jouer Malin">
+                            <span class="project-overlay"><i class="fa-solid fa-arrows-up-down-left-right"></i></span>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-info-head">
+                                <h3>Jouer Malin</h3>
+                                <p class="project-tag" data-fr="TFE · 2 ans" data-en="TFE · 2 years"></p>
                             </div>
-                            <div class="project-info">
-                                <h3>
-                                    Lorenergie
-                                </h3>
-                                <p class="text-info" 
-                                data-fr="Avec Lorenergie, transformez la performance énergétique de votre bien en un atout précieux, grâce à notre expertise et un service client d'exception." 
-                                data-en="With Lorenergie, transform the energy performance of your property into a precious asset, thanks to our expertise and exceptional customer service."
-                                ></p>
-                                <br> 
-                                <div class="project-mini-tags">
-                                    <span class="mini-tag">Figma</span>
-                                    <span class="mini-tag">Copywriting</span>
-                                    <span class="mini-tag">Tailwind</span>
-                                    <span class="mini-tag">NextJs</span>
-                                </div>
-                                <div class="project-tag-container">
-                                    <p class="project-tag"
-                                        data-fr="[ Projet de stage ]" 
-                                        data-en="[ Internship Project ]"
-                                    ></p>
-                                    <button class="figma-button" data-figma-url="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FichzZFmiUKHphhiS9trRQW%2FLorenergie-designerUX-UI%3Fnode-id%3D0-1">
-                                        <img src="./assets/images/figmaLogo.png" alt="Voir le prototype Figma">
-                                    </button>
-                                </div>
+                            <p class="project-tech">HTML · CSS · JavaScript · TypeScript</p>
+                            <p data-fr="Mon projet de fin de bachelier, mené sur deux ans : une plateforme pédagogique et gamifiée pour aider les parents à mieux comprendre l'univers du jeu vidéo de leurs enfants."
+                               data-en="My bachelor thesis project, carried out over two years: a gamified, educational platform helping parents better understand their children's video game habits."></p>
+                            <div class="project-category-tags">
+                                <span class="category-tag">Design</span>
+                                <span class="category-tag">Intégration</span>
                             </div>
                         </div>
-                    </a>
-                    <!-- card 2 -->
-                    <a href="https://cookup.emu.isfsc.be/" target="_blank" class="project-card">
-                        <div>
-                            <div class="project-image">
-                                <img src="./assets/images/cookup.webp" loading="lazy" alt="Culturius">
-                                <div class="project-overlay">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <h3>
-                                    Cook'Up
-                                </h3>
-                                <p class="text-info" 
-                                data-fr="Application de recettes de cuisine collaborative, offrant une expérience utilisateur intuitive pour partager et découvrir des recettes du monde entier." 
-                                data-en="Collaborative cooking recipe application, offering an intuitive user experience to share and discover recipes from around the world.">
-                                ></p>
-                                <br> 
-                                <div class="project-mini-tags">
-                                    <span class="mini-tag">Figma</span>
-                                    <span class="mini-tag">HTML</span>
-                                    <span class="mini-tag">CSS</span>
-                                    <span class="mini-tag">PHP</span>
-                                </div>
-                                <div class="project-tag-container">
-                                    <p class="project-tag"
-                                        data-fr="[ Projet étudiant ]" 
-                                        data-en="[ Student Project ]"
-                                    ></p>
-                                    <button class="figma-button" data-figma-url="https://embed.figma.com/design/0u6aWnT320PR6nrSSWAdIV/cook-up-designerUX-UI?node-id=0-1&embed-host=share">
-                                        <img src="./assets/images/figmaLogo.png" alt="Voir le prototype Figma">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <!-- card 3 -->
-                    <a href="https://culturius.com/fr?country=be" target="_blank" class="project-card">
-                        <div>
-                            <div class="project-image">
-                                <img src="./assets/images/Culturius-stage.webp" loading="lazy" alt="Culturius">
-                                <div class="project-overlay">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <h3>
-                                    Culturius
-                                </h3>
-                                <p class="text-info"
-                                    data-fr="Création d'un site web pour la startup Culturius, visant à faire découvrir les événements locaux." 
-                                    data-en="Creation of a website for the startup Culturius, aiming to discover local events."
-                                ></p>
-                                <br> 
-                                <div class="project-mini-tags">
-                                    <span class="mini-tag">Next.js</span>
-                                    <span class="mini-tag">Sass</span>
-                                </div>
+                    </div>
 
-                                <div class="project-tag-container">
-                                    <p class="project-tag"
-                                        data-fr="[ Projet de stage ]" 
-                                        data-en="[ Internship Project ]"
-                                    ></p>
-                                    <button class="figma-button" disabled title="Prototype non disponible">
-                                        <img src="./assets/images/figmaLogo.png" 
-                                             data-fr="Maquette non disponible" 
-                                             data-en="Model not available"
-                                             alt="Maquette non disponible">
-                                    </button>
-                                </div>
+                    <div class="project-card project-card-featured" tabindex="0" role="button" aria-haspopup="dialog" data-project="rebelcompany" data-role="designer">
+                        <div class="featured-badge" data-fr="NOUVEAU" data-en="NEW"></div>
+                        <div class="project-image">
+                            <img src="./assets/images/rebelcompany/rebelCompany.png" alt="RebelCompany">
+                            <span class="project-overlay"><i class="fa-solid fa-arrows-up-down-left-right"></i></span>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-info-head">
+                                <h3>RebelCompany</h3>
+                                <p class="project-tag" data-fr="Stage · 3 mois" data-en="Internship · 3 months"></p>
+                            </div>
+                            <p class="project-tech">Figma · Prototypage</p>
+                            <p data-fr="Refonte UX/UI complète pour une agence de communication digitale. Maquette finalisée, en attente d'intégration : le site actuellement en ligne ne reflète donc pas encore ce travail."
+                               data-en="Full UX/UI redesign for a digital communication agency. The mockup is finalized but not yet built: the current live site does not reflect this work yet."></p>
+                            <div class="project-category-tags">
+                                <span class="category-tag">Design</span>
                             </div>
                         </div>
-                    </a>
-                    <!-- card 4 -->
-                    <a href="https://jniouen-wassim.github.io/React-PizzaClick/" target="_blank" class="project-card">
-                        <div> 
-                            <div class="project-image">
-                                <img src="./assets/images/projet_pizza.webp" loading="lazy" alt="PizzaClicker">
-                                <div class="project-overlay">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <h3>
-                                    PizzaClicker
-                                </h3>
-                                <p class="text-info"
-                                    data-fr="Site amusant basé sur le célèbre jeu 'Cookie Clicker'. Le but est d'avoir le plus de clic possible." 
-                                    data-en="Fun website based on the famous game 'Cookie Clicker'. The goal is to have the most clicks possible."
-                                ></p>
-                                <br>
-                                <div class="project-mini-tags">
-                                    <span class="mini-tag">React</span>
-                                    <span class="mini-tag">JavaScript</span>
-                                </div>
+                    </div>
 
-                                <div class="project-tag-container">
-                                    <p class="project-tag"
-                                        data-fr="[ Projet de formation ]" 
-                                        data-en="[ Training project ]"
-                                    ></p>
-                                    <button class="figma-button" disabled title="Prototype non disponible">
-                                        <img src="./assets/images/figmaLogo.png" 
-                                             data-fr="Maquette non disponible" 
-                                             data-en="Model not available"
-                                             alt="Maquette non disponible">
-                                    </button>
-                                </div>
+                    <div class="project-card" tabindex="0" role="button" aria-haspopup="dialog" data-project="lorenergie" data-role="designer">
+                        <div class="project-image">
+                            <img src="./assets/images/lorenergie/lorenergie.png" alt="Lorenergie">
+                            <span class="project-overlay"><i class="fa-solid fa-arrows-up-down-left-right"></i></span>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-info-head">
+                                <h3>Lorenergie</h3>
+                                <p class="project-tag" data-fr="Stage · 3 mois" data-en="Internship · 3 months"></p>
+                            </div>
+                            <p class="project-tech">Figma · Design hand-off</p>
+                            <p data-fr="Refonte du site de Lorenergie, entreprise spécialisée en solutions énergétiques durables. Maquette entièrement conçue puis intégrée par un développeur : le site en ligne correspond à cette refonte."
+                               data-en="Redesign of Lorenergie's website, a company specialized in sustainable energy solutions. The mockup was fully designed then built by a developer: the live site reflects this redesign."></p>
+                            <div class="project-category-tags">
+                                <span class="category-tag">Design</span>
                             </div>
                         </div>
-                    </a>
-                    <!-- card 5 -->
-                    <a href="https://jeanfabry.github.io/Showcase-website-fictional-restaurant/" target="_blank" class="project-card">
-                        <div>
-                            <div class="project-image">
-                                <img src="./assets/images/projet_restaurant.webp" loading="lazy" alt="Restaurant">
-                                <div class="project-overlay">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <h3>
-                                    Restaurant
-                                </h3>
-                                <p class="text-info"
-                                    data-fr="Création d'un site fictif pour un célèbre restaurant gastronomique." 
-                                    data-en="Creation of a fake restaurant website."
-                                ></p>
-                                <br> 
-                                <div class="project-mini-tags">
-                                    <span class="mini-tag">PHP</span>
-                                    <span class="mini-tag">JavaScript</span>
-                                </div>
-                                <div class="project-tag-container">
-                                    <p class="project-tag"
-                                        data-fr="[ Projet de formation ]" 
-                                        data-en="[ Training project ]"
-                                    ></p>
-                                    <button class="figma-button" disabled title="Prototype non disponible">
-                                        <img src="./assets/images/figmaLogo.png" 
-                                             data-fr="Maquette non disponible" 
-                                             data-en="Model not available"
-                                             alt="Maquette non disponible">
-                                    </button>
-                                </div>
-                            </div>               
+                    </div>
+
+                    <div class="project-card" tabindex="0" role="button" aria-haspopup="dialog" data-project="culturius" data-role="developer">
+                        <div class="project-image">
+                            <img src="./assets/images/culturius/Culturius-stage.png" alt="Culturius">
+                            <span class="project-overlay"><i class="fa-solid fa-arrows-up-down-left-right"></i></span>
                         </div>
-                    </a>
-                    <!-- card 6 -->
-                    <a href="https://men-in-night.vercel.app/" target="_blank" class="project-card">
-                        <div>
-                            <div class="project-image">
-                                <img src="./assets/images/projet_menInNight.webp" loading="lazy" alt="Men In Night">
-                                <div class="project-overlay">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </div>
+                        <div class="project-info">
+                            <div class="project-info-head">
+                                <h3>Culturius</h3>
+                                <p class="project-tag" data-fr="Stage · 3 mois" data-en="Internship · 3 months"></p>
                             </div>
-                            <div class="project-info">
-                                <h3>
-                                    Men In Night
-                                </h3>
-                                <p class="text-info"
-                                    data-fr="Création d'une carte de visite fictive pour un service de livraison de nourriture à domicile." 
-                                    data-en="Creation of a fake visit card for a food delivery service."
-                                ></p>
-                                <br> 
-                                <div class="project-mini-tags">
-                                    <span class="mini-tag">Next.js</span>
-                                    <span class="mini-tag">Sass</span>
-                                </div>
-                                <div class="project-tag-container">
-                                    <p class="project-tag"
-                                        data-fr="[ Projet personnel ]" 
-                                        data-en="[ Personal project ]"
-                                    ></p>
-                                    <button class="figma-button" disabled title="Prototype non disponible">
-                                        <img src="./assets/images/figmaLogo.png" 
-                                             data-fr="Maquette non disponible" 
-                                             data-en="Model not available"
-                                             alt="Maquette non disponible">
-                                    </button>
-                                </div>
+                            <p class="project-tech">Next.js · Sass</p>
+                            <p data-fr="Intégration front-end du site Culturius. Le site était en développement depuis 2 ans, j'ai contribué à mettre la maquette du designer dans le front-end."
+                               data-en="Front-end integration of the Culturius website. The site had been in development for 2 years, I contributed to implementing the designer's mockup in the front-end."></p>
+                            <div class="project-category-tags">
+                                <span class="category-tag">Intégration</span>
                             </div>
                         </div>
-                    </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 05 - Contact -->
+        <section id="sectionContact" class="section section-contact">
+            <div class="content">
+                <div class="section-head section-head-centered" data-index="04">
+                    <span class="head-glow head-glow-mauve" aria-hidden="true"></span>
+                    <span class="head-glow head-glow-green" aria-hidden="true"></span>
+                    <div class="section-head-row">
+                        <p class="eyebrow"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span data-fr="// 04 - Contact" data-en="// 04 - Contact"></span></p>
+                        <span class="section-head-number" aria-hidden="true">04</span>
+                    </div>
+                    <h2 class="section-title" data-fr="Discutons de votre projet" data-en="Let's talk about your project"></h2>
+                </div>
+                <p class="contact-desc"
+                   data-fr="Disponible pour un poste de Designer UX/UI en CDI à Bruxelles. N'hésitez pas à me contacter, <br> je réponds rapidement."
+                   data-en="Available for a full-time UX/UI Designer role in Brussels. Feel free to reach out; I reply quickly."
+                ></p>
+                <div class="social-rail social-rail-footer">
+                    <a href="mailto:jniouenwassim@hotmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/wassim-jniouen-953b651b9/" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Jniouen-Wassim" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Modal Figma -->
-    <div class="figma-modal" id="figmaModal">
-        <span class="close-modal">&times;</span>
-        <iframe id="figmaIframe" style="border: 1px solid rgba(0, 0, 0, 0.1);" 
-                width="100%" 
-                height="100%" 
-                allowfullscreen>
-        </iframe>
-    </div>
-
-    <!-- Footer copyright -->
-    <footer class="site-footer">
-        <div class="footer-content">
-            <p class="copyright"> 2025 Wassim Jniouen. Tous droits réservés.</p>
-        </div>
+    <footer class="footer" id="siteFooter">
+        <p class="footer-text" data-fr="© 2026 Wassim Jniouen. Tous droits réservés." data-en="© 2026 Wassim Jniouen. All rights reserved."></p>
     </footer>
 
-    
-    <!-- Scripts -->
+    <!-- Modale : étude de cas d'un projet -->
+    <div class="modal-overlay" id="projectModal" hidden>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" id="modalClose" aria-label="Fermer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-image" id="modalImageWrap">
+                <img id="modalImage" src="" alt="">
+            </div>
+            <div class="modal-body">
+                <div class="modal-head">
+                    <h3 id="modalTitle"></h3>
+                    <div class="modal-tags" id="modalTags"></div>
+                </div>
+                <p class="modal-tech" id="modalTech"></p>
+                <p class="modal-desc" id="modalDesc"></p>
+                <h4 class="modal-subhead" data-fr="Démarche" data-en="Process"></h4>
+                <ul class="modal-methodology" id="modalMethod"></ul>
+                <div class="modal-actions" id="modalActions"></div>
+            </div>
+            <div class="modal-scroll-fade" aria-hidden="true"></div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
-    <!-- AOS -->
-    <script>
-        AOS.init({
-            once: true,
-            duration: 800,
-        });
-    </script>
 </body>
 </html>

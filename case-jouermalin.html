@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jouer Malin — Étude de cas · Wassim Jniouen</title>
+    <meta name="description" content="Étude de cas : Jouer Malin, projet de fin de bachelier mené sur deux ans, une plateforme pour aider les parents à mieux comprendre l'univers du jeu vidéo.">
+    <link rel="shortcut icon" href="./assets/img/Plan de travail 1.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="translate-container">
+
+    <div class="starfield" aria-hidden="true"></div>
+    <canvas class="particle-wave" id="particleWave" aria-hidden="true"></canvas>
+
+    <button id="languageToggle" class="language-toggle" data-fr="EN" data-en="FR" aria-label="Changer de langue"></button>
+    <a href="index.html#sectionProjects" class="case-back">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        <span data-fr="Retour au portfolio" data-en="Back to portfolio"></span>
+    </a>
+
+    <main class="case-main">
+        <div class="case-hero" data-reveal>
+            <p class="eyebrow"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span data-fr="// Projet de fin de bachelier" data-en="// Bachelor thesis"></span></p>
+            <h1 class="case-title">Jouer Malin</h1>
+            <p class="case-subtitle"
+               data-fr="Une plateforme pédagogique et gamifiée pour aider les parents à mieux comprendre l'univers du jeu vidéo de leurs enfants. Mon projet de fin de bachelier, mené sur deux ans, de la recherche utilisateur au développement."
+               data-en="A gamified, educational platform helping parents better understand their children's video game world. My bachelor thesis, carried out over two years, from user research to development."
+            ></p>
+
+            <div class="case-image-frame">
+                <img src="./assets/images/jouermalin(TFE)/jouerMalin.png" alt="Jouer Malin">
+            </div>
+
+            <div class="case-meta-row">
+                <div class="case-meta">
+                    <span class="case-meta-label" data-fr="Rôle" data-en="Role"></span>
+                    <span class="case-meta-value" data-fr="Recherche, design UX/UI &amp; développement" data-en="Research, UX/UI design &amp; development"></span>
+                </div>
+                <div class="case-meta">
+                    <span class="case-meta-label" data-fr="Durée" data-en="Duration"></span>
+                    <span class="case-meta-value" data-fr="Projet de fin d'études · 2 ans" data-en="Bachelor thesis · 2 years"></span>
+                </div>
+                <div class="case-meta">
+                    <span class="case-meta-label">Stack</span>
+                    <span class="case-meta-value">Figma · HTML · CSS · JavaScript · TypeScript</span>
+                </div>
+            </div>
+
+            <div class="case-hero-actions">
+                <a href="https://jouermalin.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    <span data-fr="Voir le site" data-en="View site"></span>
+                </a>
+            </div>
+        </div>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">01 — <span data-fr="Contexte" data-en="Context"></span></span>
+            <h2 data-fr="Un projet mené sur deux ans" data-en="A project carried out over two years"></h2>
+            <p data-fr="Jouer Malin est mon projet de fin de bachelier. Contrairement à mes stages en entreprise, il s'agit d'un projet personnel mené sur deux années complètes, de la recherche initiale jusqu'au développement du site. Il m'a permis de dérouler, pour la première fois seul, l'intégralité d'une démarche UX/UI sur un sujet que j'ai choisi et défini moi-même."
+               data-en="Jouer Malin is my bachelor thesis project. Unlike my company internships, it's a personal project carried out over two full years, from initial research to the development of the site. It let me run, for the first time on my own, an entire UX/UI process on a topic I chose and defined myself."
+            ></p>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">02 — <span data-fr="Problématique" data-en="Problem"></span></span>
+            <h2 data-fr="Un fossé entre parents et enfants" data-en="A gap between parents and children"></h2>
+            <p data-fr="De nombreux parents connaissent mal l'univers du jeu vidéo et disposent de peu de ressources fiables pour comprendre les pratiques de leurs enfants : quels jeux, quels risques, quels bénéfices. Cette méconnaissance peut créer des incompréhensions et compliquer le dialogue en famille autour du sujet."
+               data-en="Many parents know little about video games and have few reliable resources to understand their children's habits: which games, what risks, what benefits. This lack of knowledge can create misunderstandings and make it harder for families to talk about the subject."
+            ></p>
+            <p data-fr="L'objectif de Jouer Malin était de concevoir une plateforme pédagogique, moderne et gamifiée, pour accompagner les parents dans la découverte de cet univers, sans jargon ni jugement."
+               data-en="The goal of Jouer Malin was to design a pedagogical, modern and gamified platform to guide parents in discovering this world, without jargon or judgment."
+            ></p>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">03 — <span data-fr="Recherche utilisateur" data-en="User research"></span></span>
+            <h2 data-fr="Comprendre avant de concevoir" data-en="Understanding before designing"></h2>
+            <p data-fr="Avant toute maquette, j'ai mené plusieurs recherches pour construire une solution réellement centrée sur les utilisateurs et valider les hypothèses de départ."
+               data-en="Before any mockup, I carried out several research activities to build a solution truly centered on users, and to validate my initial assumptions."
+            ></p>
+            <ul>
+                <li data-fr="Interviews avec quatre parents, pour comprendre leur rapport au jeu vidéo, leurs craintes et leurs besoins d'information." data-en="Interviews with four parents, to understand their relationship with video games, their concerns and their information needs."></li>
+                <li data-fr="Un entretien avec un professionnel spécialisé dans les usages d'Internet et la sécurité numérique, pour ancrer le projet dans des recommandations fiables." data-en="An interview with a professional specialized in internet usage and digital safety, to ground the project in reliable recommendations."></li>
+                <li data-fr="Une synthèse des échanges pour valider ou ajuster les hypothèses initiales du projet." data-en="A synthesis of these conversations to validate or adjust the project's initial assumptions."></li>
+            </ul>
+            <p data-fr="Ces recherches ont directement influencé la suite du projet : elles ont confirmé le besoin d'un ton rassurant et accessible, et ont orienté les thématiques prioritaires à traiter sur la plateforme."
+               data-en="This research directly shaped the rest of the project: it confirmed the need for a reassuring, accessible tone, and guided which topics the platform should prioritize."
+            ></p>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">04 — <span data-fr="Personas" data-en="Personas"></span></span>
+            <h2 data-fr="Donner un visage aux utilisateurs" data-en="Giving users a face"></h2>
+            <p data-fr="À partir des interviews, j'ai construit des personas représentant les profils de parents rencontrés : des niveaux de connaissance du jeu vidéo très différents, des préoccupations communes autour du temps d'écran et de la sécurité en ligne, et des attentes variées sur la manière d'être informés. Ces personas ont servi de repère tout au long du projet pour orienter les décisions de contenu et d'interface."
+               data-en="Based on the interviews, I built personas representing the profiles of parents I met: very different levels of familiarity with video games, shared concerns around screen time and online safety, and varied expectations about how they wanted to be informed. These personas served as a reference throughout the project to guide content and interface decisions."
+            ></p>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">05 — <span data-fr="Démarche UX/UI" data-en="UX/UI process"></span></span>
+            <h2 data-fr="De l'idée au wireframe" data-en="From idea to wireframe"></h2>
+            <p data-fr="Une fois la problématique et les utilisateurs bien cernés, j'ai construit le tone of voice de la plateforme : rassurant, clair et sans jargon technique, pour ne jamais faire sentir aux parents qu'ils devraient déjà tout savoir. L'architecture de l'information a ensuite structuré les grands parcours du site, avant de passer aux wireframes."
+               data-en="Once the problem and the users were clearly understood, I defined the platform's tone of voice: reassuring, clear and free of technical jargon, so parents would never feel like they were expected to already know everything. The information architecture then structured the site's main journeys, before moving on to wireframes."
+            ></p>
+            <ul>
+                <li data-fr="Définition du tone of voice, pensé pour être rassurant et accessible" data-en="Defining the tone of voice, designed to be reassuring and accessible"></li>
+                <li data-fr="Architecture de l'information des différents parcours" data-en="Information architecture for the different journeys"></li>
+                <li data-fr="Wireframes, puis plusieurs itérations de maquettes basse et haute fidélité" data-en="Wireframes, then several low- and high-fidelity mockup iterations"></li>
+            </ul>
+            <div class="case-image-frame">
+                <div class="case-image-placeholder">
+                    <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+                    <span data-fr="Wireframes &amp; architecture de l'information" data-en="Wireframes &amp; information architecture"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">06 — <span data-fr="Identité visuelle &amp; Design System" data-en="Visual identity &amp; Design System"></span></span>
+            <h2 data-fr="Construire un univers cohérent" data-en="Building a coherent world"></h2>
+            <p data-fr="En parallèle des maquettes, j'ai créé le logo et l'identité visuelle de Jouer Malin, puis défini une palette de couleurs pensée pour rester moderne et chaleureuse, à mille lieues de l'image parfois froide ou technique associée au jeu vidéo. L'ensemble a été formalisé dans un Design System complet, garantissant la cohérence de la plateforme à mesure que de nouvelles pages étaient ajoutées."
+               data-en="Alongside the mockups, I created Jouer Malin's logo and visual identity, then defined a color palette designed to feel modern and warm, far from the sometimes cold or technical image associated with video games. Everything was formalized into a full Design System, ensuring consistency as new pages were added to the platform."
+            ></p>
+            <ul>
+                <li data-fr="Création du logo et de l'identité visuelle" data-en="Logo and visual identity creation"></li>
+                <li data-fr="Définition de la palette de couleurs" data-en="Color palette definition"></li>
+                <li data-fr="Design System complet (composants, typographie, couleurs, espacements)" data-en="Full Design System (components, typography, colors, spacing)"></li>
+            </ul>
+            <div class="case-image-frame">
+                <div class="case-image-placeholder">
+                    <i class="fa-solid fa-palette" aria-hidden="true"></i>
+                    <span data-fr="Design System &amp; identité visuelle" data-en="Design System &amp; visual identity"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">07 — <span data-fr="Prototypage &amp; tests" data-en="Prototyping &amp; testing"></span></span>
+            <h2 data-fr="Confronter les maquettes au réel" data-en="Putting the mockups to the test"></h2>
+            <p data-fr="Les maquettes ont été transformées en prototypes interactifs sur Figma, testés auprès d'utilisateurs afin d'identifier les points de friction restants. Les retours ont permis d'affiner plusieurs parcours avant de passer à la phase de développement."
+               data-en="The mockups were turned into interactive prototypes in Figma, tested with users to identify any remaining friction points. Feedback helped refine several journeys before moving into the development phase."
+            ></p>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">08 — <span data-fr="Développement" data-en="Development"></span></span>
+            <h2 data-fr="De la maquette au site fonctionnel" data-en="From mockup to working site"></h2>
+            <p data-fr="J'ai ensuite développé le site moi-même en HTML, CSS, JavaScript et TypeScript, en veillant à respecter fidèlement le Design System établi en amont. Cette étape m'a permis de vérifier, dans les faits, la cohérence et la faisabilité technique des choix UX/UI réalisés."
+               data-en="I then developed the site myself in HTML, CSS, JavaScript and TypeScript, staying faithful to the Design System established earlier. This step let me verify, in practice, the consistency and technical feasibility of the UX/UI decisions made."
+            ></p>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">09 — <span data-fr="Résultat" data-en="Result"></span></span>
+            <h2 data-fr="Une démarche complète, du premier parent interrogé au site en ligne" data-en="A complete process, from the first parent interviewed to the live site"></h2>
+            <p data-fr="Jouer Malin est aujourd'hui un site fonctionnel, dont chaque décision, du choix des couleurs à la structure des parcours, découle directement des recherches menées auprès des parents et de l'expert interrogé. C'est le projet qui illustre le mieux ma capacité à mener une démarche UX/UI de bout en bout."
+               data-en="Jouer Malin is now a working site, where every decision, from the color choices to the journey structure, stems directly from the research carried out with parents and the expert I interviewed. It's the project that best illustrates my ability to lead a UX/UI process from end to end."
+            ></p>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">10 — <span data-fr="Enseignements" data-en="Learnings"></span></span>
+            <h2 data-fr="Ce que ce projet m'a appris" data-en="What this project taught me"></h2>
+            <p data-fr="Mener un projet seul sur deux ans m'a appris à tenir une vision de bout en bout, à documenter mes décisions pour pouvoir les justifier, et à accepter de revenir en arrière quand la recherche utilisateur contredisait une intuition de départ. C'est aussi ce projet qui m'a confirmé l'importance de la recherche utilisateur en amont de toute décision de design."
+               data-en="Leading a project alone over two years taught me to hold a vision from start to finish, to document my decisions so I could justify them, and to accept going back to the drawing board when user research contradicted an initial intuition. This project also confirmed to me how important upfront user research is before any design decision."
+            ></p>
+        </section>
+
+        <section class="case-section" data-reveal>
+            <span class="case-num">11 — <span data-fr="Compétences &amp; outils" data-en="Skills &amp; tools"></span></span>
+            <h2 data-fr="Ce que ce projet a mobilisé" data-en="What this project called on"></h2>
+            <div class="case-tags">
+                <span class="case-tag" data-fr="Recherche utilisateur" data-en="User research"></span>
+                <span class="case-tag" data-fr="Personas" data-en="Personas"></span>
+                <span class="case-tag" data-fr="Architecture de l'information" data-en="Information architecture"></span>
+                <span class="case-tag" data-fr="Design System" data-en="Design System"></span>
+                <span class="case-tag" data-fr="Identité de marque" data-en="Brand identity"></span>
+                <span class="case-tag" data-fr="Prototypage" data-en="Prototyping"></span>
+                <span class="case-tag" data-fr="Tests utilisateurs" data-en="User testing"></span>
+                <span class="case-tag" data-fr="Développement front-end" data-en="Front-end development"></span>
+                <span class="case-tag">Figma</span>
+                <span class="case-tag">HTML/CSS/JS/TS</span>
+            </div>
+        </section>
+
+        <div class="case-footer">
+            <a href="case-rebelcompany.html" class="btn btn-ghost">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                <span data-fr="Étude de cas précédente" data-en="Previous case study"></span>
+            </a>
+            <a href="index.html#sectionProjects" class="btn btn-ghost">
+                <span data-fr="Retour aux projets" data-en="Back to projects"></span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </main>
+
+    <script src="case-study.js"></script>
+</body>
+</html>
