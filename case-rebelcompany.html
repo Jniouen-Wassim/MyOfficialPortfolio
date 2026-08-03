@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RebelCompany — Étude de cas · Wassim Jniouen</title>
     <meta name="description" content="Étude de cas : refonte UX/UI complète pour RebelCompany, agence de communication digitale.">
-    <link rel="shortcut icon" href="./assets/img/Plan de travail 1.png">
+    <link rel="shortcut icon" href="./assets/images/WJ.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -14,7 +14,7 @@
     <div class="starfield" aria-hidden="true"></div>
     <canvas class="particle-wave" id="particleWave" aria-hidden="true"></canvas>
 
-    <button id="languageToggle" class="language-toggle" data-fr="EN" data-en="FR" aria-label="Changer de langue"></button>
+    <button id="languageToggle" class="language-toggle" aria-label="Changer de langue"></button>
     <a href="index.html#sectionProjects" class="case-back">
         <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
         <span data-fr="Retour au portfolio" data-en="Back to portfolio"></span>
@@ -30,7 +30,7 @@
             ></p>
 
             <div class="case-image-frame">
-                <img src="./assets/images/rebelcompany/rebelCompany.png" alt="RebelCompany">
+                <img src="./assets/images/rebelcompany/rebelCompany.png" alt="RebelCompany" class="zoomable-image">
             </div>
 
             <div class="case-meta-row">
@@ -154,16 +154,26 @@
         </section>
 
         <div class="case-footer">
-            <a href="case-lorenergie.html" class="btn btn-ghost">
+            <a href="index.html#sectionProjects" class="btn btn-ghost">
                 <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-                <span data-fr="Étude de cas précédente" data-en="Previous case study"></span>
+                <span data-fr="Retour" data-en="Back"></span>
             </a>
             <a href="case-jouermalin.html" class="btn btn-ghost">
-                <span data-fr="Étude de cas suivante" data-en="Next case study"></span>
+                <span data-fr="Suivant" data-en="Next"></span>
                 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
         </div>
     </main>
+
+    <!-- Lightbox pour zoom d'image -->
+    <div class="lightbox" id="imageLightbox" hidden>
+        <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="">
+        </div>
+    </div>
 
     <script src="case-study.js"></script>
 </body>
