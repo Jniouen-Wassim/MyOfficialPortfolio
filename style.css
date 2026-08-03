@@ -152,7 +152,7 @@ main, .footer, .side-nav, .language-toggle { position: relative; z-index: 2; }
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     z-index: 1000;
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 /*==============================================================================
@@ -442,6 +442,13 @@ h3 { font-family: var(--font-body); font-weight: 700; color: var(--text); }
     color: var(--text);
 }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+.btn i, .case-back i {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    transform: translateY(2px);
+}
 
 /*==============================================================================
    HERO
