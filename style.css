@@ -1048,17 +1048,26 @@ h3 { font-family: var(--font-body); font-weight: 700; color: var(--text); }
     justify-content: center;
     width: 24px;
     height: 24px;
+
+    background-color: var(--text-dim);
+
+    mask-image: url("./assets/images/tailwind-icon.svg");
+    -webkit-mask-image: url("./assets/images/tailwind-icon.svg");
+
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+
+    mask-position: center;
+    -webkit-mask-position: center;
+
+    mask-size: contain;
+    -webkit-mask-size: contain;
+
+    transition: background-color 0.3s var(--ease);
 }
-.skill-icon-tailwind svg {
-    width: 100%;
-    height: 100%;
-}
-.skill-icon-tailwind svg path {
-    fill: var(--text-dim);
-    transition: fill 0.3s var(--ease);
-}
-.skill-tile:hover .skill-icon-tailwind svg path {
-    fill: var(--accent);
+
+.skill-tile:hover .skill-icon-tailwind {
+    background-color: var(--accent);
 }
 
 .project-image {
